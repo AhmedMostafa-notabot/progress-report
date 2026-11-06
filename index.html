@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmed Mostafa — Executive Progress Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --bg-subtle: #f1f5f9;
+      --surface: #ffffff;
+      --surface-hover: #f8fafc;
+      --surface-elevated: #ffffff;
+      --ink: #0f172a;
+      --ink-secondary: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --line-strong: #cbd5e1;
+
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --accent-border: rgba(37, 99, 235, 0.25);
+
+      --done: #059669;
+      --done-soft: rgba(5, 150, 105, 0.1);
+      --done-border: rgba(5, 150, 105, 0.3);
+
+      --active: #d97706;
+      --active-soft: rgba(217, 119, 6, 0.1);
+      --active-border: rgba(217, 119, 6, 0.3);
+
+      --planned: #64748b;
+      --planned-soft: rgba(100, 116, 139, 0.1);
+      --planned-border: rgba(100, 116, 139, 0.3);
+
+      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+
+      --head: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+      --body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      --mono: "JetBrains Mono", monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+
+      color-scheme: light;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b0f19;
+      --bg-subtle: #111827;
+      --surface: #131c2e;
+      --surface-hover: #1a263d;
+      --surface-elevated: #192338;
+      --ink: #f8fafc;
+      --ink-secondary: #cbd5e1;
+      --muted: #94a3b8;
+      --line: #1e293b;
+      --line-strong: #334155;
+
+      --accent: #60a5fa;
+      --accent-soft: rgba(96, 165, 250, 0.12);
+      --accent-border: rgba(96, 165, 250, 0.3);
+
+      --done: #34d399;
+      --done-soft: rgba(52, 211, 153, 0.12);
+      --done-border: rgba(52, 211, 153, 0.3);
+
+      --active: #fbbf24;
+      --active-soft: rgba(251, 191, 36, 0.12);
+      --active-border: rgba(251, 191, 36, 0.3);
+
+      --planned: #94a3b8;
+      --planned-soft: rgba(148, 163, 184, 0.12);
+      --planned-border: rgba(148, 163, 184, 0.3);
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
+
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image: radial-gradient(circle at 50% 0%, var(--accent-soft), transparent 60%);
+      background-repeat: no-repeat;
+      background-size: 100% 600px;
+      color: var(--ink);
+      font: 400 16px/1.65 var(--body);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ================= TOP NAVIGATION ================= */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+      color: #fff;
+      font: 700 14px var(--head);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-text b {
+      font: 700 15px var(--head);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-subtle);
+      padding: 4px;
+      border-radius: 99px;
+      border: 1px solid var(--line);
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 99px;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-links a.active {
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: var(--shadow-sm);
+      font-weight: 600;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: var(--ink-secondary);
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 7px 13px;
+      font: 500 13px var(--body);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .icon-btn:hover {
+      border-color: var(--line-strong);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .icon-btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    /* ================= HERO & KPI SUMMARY ================= */
+    header {
+      padding: 56px 0 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font: 600 12px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 5px 12px;
+      border-radius: 99px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      font: 800 clamp(2.2rem, 4.8vw, 3.35rem)/1.08 var(--head);
+      letter-spacing: -0.025em;
+      margin: 0 0 16px;
+      max-width: 20ch;
+      color: var(--ink);
+    }
+
+    .lede {
+      color: var(--ink-secondary);
+      max-width: 66ch;
+      margin: 0 0 36px;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    /* Executive KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+      opacity: 0.7;
+    }
+
+    .kpi-card:nth-child(2)::before {
+      background: var(--done);
+    }
+
+    .kpi-card:nth-child(3)::before {
+      background: #8b5cf6;
+    }
+
+    .kpi-card:nth-child(4)::before {
+      background: var(--active);
+    }
+
+    .kpi-value {
+      font: 800 1.85rem/1.1 var(--head);
+      color: var(--ink);
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-label {
+      font: 600 13px var(--body);
+      color: var(--ink-secondary);
+      margin-bottom: 4px;
+    }
+
+    .kpi-sub {
+      font: 400 12px var(--mono);
+      color: var(--muted);
+    }
+
+    /* Interactive Pipeline Strip */
+    .pipeline-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pipeline-title {
+      font: 600 13px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .legend {
+      display: flex;
+      gap: 16px;
+      font-size: 12.5px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .legend i {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .seg {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--planned);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.35;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.18s ease;
+    }
+
+    .seg:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--line-strong);
+    }
+
+    .seg.done {
+      border-top-color: var(--done);
+    }
+
+    .seg.active {
+      border-top-color: var(--active);
+    }
+
+    .seg-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .seg-idx {
+      font: 600 11px var(--mono);
+      color: var(--muted);
+    }
+
+    .seg-qtr {
+      font: 500 11px var(--mono);
+      color: var(--muted);
+      background: var(--bg-subtle);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .seg-name {
+      font: 600 13px/1.3 var(--head);
+      color: var(--ink);
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .seg-status {
+      font-size: 11.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .seg.done .seg-status {
+      color: var(--done);
+    }
+
+    .seg.active .seg-status {
+      color: var(--active);
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      font: 700 1.75rem/1.2 var(--head);
+      letter-spacing: -0.015em;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+
+    .sub {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    /* ================= CURRENT FOCUS BANNER ================= */
+    .focus-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .focus-card {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--bg-subtle) 100%);
+      border: 1px solid var(--active-border);
+      border-left: 5px solid var(--active);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .focus-body {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .focus-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font: 600 11.5px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--active);
+      margin-bottom: 8px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--active);
+      box-shadow: 0 0 0 0 var(--active);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(217, 119, 6, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0);
+      }
+    }
+
+    .focus-card h3 {
+      margin: 0 0 6px;
+      font: 700 1.2rem/1.3 var(--head);
+      color: var(--ink);
+    }
+
+    .focus-card p {
+      margin: 0;
+      color: var(--ink-secondary);
+      font-size: 0.96rem;
+      max-width: 72ch;
+    }
+
+    .focus-badge {
+      background: var(--active-soft);
+      color: var(--active);
+      border: 1px solid var(--active-border);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font: 600 12.5px var(--mono);
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    /* ================= FILTER & CONTROLS BAR ================= */
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      flex-wrap: wrap;
+    }
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--muted);
+      font: 500 13px var(--body);
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--ink);
+      background: var(--bg-subtle);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent-border);
+      font-weight: 600;
+    }
+
+    .controls-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 210px;
+      max-width: 280px;
+      flex: 1;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 7px 12px 7px 32px;
+      font: 400 13px var(--body);
+      color: var(--ink);
+      transition: border-color 0.15s ease;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .toggle-specs-btn {
+      background: var(--bg-subtle);
+      border: 1px solid var(--line);
+      color: var(--ink-secondary);
+      font: 500 12.5px var(--body);
+      padding: 7px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .toggle-specs-btn:hover {
+      border-color: var(--line-strong);
+      color: var(--ink);
+    }
+
+    /* ================= PROJECT CARDS ================= */
+    #projectList {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card.highlight-flash {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-lg);
+    }
+
+    /* Top Header Bar of Project */
+    .project-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 28px;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+
+    .project-topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-num {
+      font: 700 12px var(--mono);
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 600 12.5px var(--mono);
+      border-radius: 99px;
+      padding: 3px 12px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .badge.done {
+      color: var(--done);
+      background: var(--done-soft);
+      border: 1px solid var(--done-border);
+    }
+
+    .badge.done::before {
+      background: var(--done);
+    }
+
+    .badge.active {
+      color: var(--active);
+      background: var(--active-soft);
+      border: 1px solid var(--active-border);
+    }
+
+    .badge.active::before {
+      background: var(--active);
+    }
+
+    .badge.planned {
+      color: var(--planned);
+      background: var(--planned-soft);
+      border: 1px solid var(--planned-border);
+    }
+
+    .badge.planned::before {
+      background: var(--planned);
+    }
+
+    .meta-pill {
+      font: 500 12.5px var(--mono);
+      color: var(--muted);
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .repo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 600 13px var(--body);
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 6px 14px;
+      border-radius: 99px;
+      transition: all 0.15s ease;
+    }
+
+    .repo-link:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Main Content Padding */
+    .project-body {
+      padding: 28px;
+    }
+
+    .project-title-row {
+      margin-bottom: 16px;
+    }
+
+    .project-card h3 {
+      font: 700 clamp(1.35rem, 2.5vw, 1.7rem)/1.22 var(--head);
+      margin: 0 0 12px;
+      color: var(--ink);
+      letter-spacing: -0.015em;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tags span {
+      background: var(--bg-subtle);
+      color: var(--ink-secondary);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 2px 9px;
+      font: 500 11.5px var(--mono);
+    }
+
+    /* Key Metrics Highlight Row */
+    .impact-pills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .impact-pill {
+      background: var(--bg-subtle);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .impact-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: 700 13px var(--mono);
+      flex-shrink: 0;
+    }
+
+    .impact-pill strong {
+      display: block;
+      font: 700 13.5px/1.2 var(--head);
+      color: var(--ink);
+    }
+
+    .impact-pill span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Goal / Executive Summary Box */
+    .goal-box {
+      background: color-mix(in srgb, var(--accent-soft) 45%, var(--surface));
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+
+    .goal-label {
+      font: 700 11px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .goal-box p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Section Subheaders inside Project */
+    .block-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font: 700 12px var(--mono);
+      color: var(--muted);
+      margin: 24px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Bento Grid for "What We Do" */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .bento-item {
+      background: var(--bg-subtle);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease;
+    }
+
+    .bento-item:hover {
+      border-color: var(--line-strong);
+    }
+
+    .bento-item-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .bento-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font: 700 11px var(--mono);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .bento-item h5 {
+      margin: 0;
+      font: 700 0.98rem/1.35 var(--head);
+      color: var(--ink);
+    }
+
+    .bento-item p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--ink-secondary);
+    }
+
+    .bento-item code,
+    .outcome-card code {
+      font-family: var(--mono);
+      font-size: 0.85em;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 1px 5px;
+      border-radius: 4px;
+      color: var(--ink);
+    }
+
+    /* Collapsible Technical Subitems inside Bento Card */
+    .tech-details {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--line-strong);
+    }
+
+    .tech-details summary {
+      font: 600 12px var(--mono);
+      color: var(--accent);
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tech-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .tech-details summary::before {
+      content: "▸";
+      display: inline-block;
+      transition: transform 0.15s ease;
+    }
+
+    .tech-details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .tech-sublist {
+      margin: 8px 0 0;
+      padding-left: 16px;
+      font-size: 0.86rem;
+      color: var(--ink-secondary);
+    }
+
+    .tech-sublist li {
+      margin-bottom: 6px;
+      line-height: 1.45;
+    }
+
+    .tech-sublist li strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Media Gallery */
+    .media-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin: 20px 0 24px;
+    }
+
+    .media {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--bg-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .media-frame {
+      position: relative;
+      overflow: hidden;
+      background: #0f172a;
+    }
+
+    .media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+    }
+
+    .media img:hover {
+      transform: scale(1.015);
+    }
+
+    .media video {
+      display: block;
+      width: 100%;
+      max-height: 440px;
+      background: #000;
+    }
+
+    .media iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 0;
+    }
+
+    /* Sleek Preview Fallback when local assets/ file is not found */
+    .media-fallback {
+      padding: 28px 24px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .media-fallback::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .fallback-badge {
+      font: 600 11px var(--mono);
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      padding: 3px 9px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .fallback-title {
+      font: 700 1.05rem/1.3 var(--head);
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .fallback-path {
+      font: 400 12px var(--mono);
+      color: #94a3b8;
+    }
+
+    .media-caption {
+      font-size: 12.5px;
+      color: var(--muted);
+      padding: 10px 14px;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      line-height: 1.45;
+    }
+
+    /* Outcome & Next Steps Split Grid */
+    .outcome-split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .outcome-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--done);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+    }
+
+    .outcome-card.next-card {
+      border-left-color: var(--accent);
+    }
+
+    .outcome-card h4 {
+      font: 700 11.5px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--done);
+      margin: 0 0 6px;
+    }
+
+    .outcome-card.next-card h4 {
+      color: var(--accent);
+    }
+
+    .outcome-card p {
+      margin: 0;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: var(--ink-secondary);
+    }
+
+    /* Personal Note from Ahmed */
+    .project-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-top: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .note-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      color: var(--accent);
+      font: 700 12px var(--mono);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .note-content {
+      flex: 1;
+    }
+
+    .note-label {
+      font: 700 11.5px var(--mono);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .project-note p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 0.94rem;
+      font-style: italic;
+    }
+
+    /* ================= ROADMAP TIMELINE ================= */
+    .road {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .road li {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--planned);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .road li.active {
+      border-top-color: var(--active);
+    }
+
+    .road .when {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 600 11.5px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .road li.active .when {
+      color: var(--active);
+    }
+
+    .road h3 {
+      margin: 0 0 8px;
+      font: 700 1.15rem/1.3 var(--head);
+      color: var(--ink);
+    }
+
+    .road p {
+      margin: 0;
+      color: var(--ink-secondary);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    /* ================= LIGHTBOX MODAL ================= */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.88);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      max-width: 1100px;
+      max-height: 90vh;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lightbox-inner img {
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .lightbox-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 18px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .lightbox-close {
+      background: var(--bg-subtle);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font: 600 12px var(--mono);
+      cursor: pointer;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      padding: 36px 0 64px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .foot-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ================= RESPONSIVE & PRINT ================= */
+    @media (max-width: 960px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .road {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-links {
+        display: none;
+      }
+
+      header {
+        padding-top: 32px;
+      }
+
+      .project-topbar,
+      .project-body {
+        padding: 18px;
+      }
+
+      .kpi-grid,
+      .strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+
+      nav,
+      .controls-bar,
+      .lightbox {
+        display: none !important;
+      }
+
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+
+      .project-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        margin-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav>
+    <div class="wrap">
+      <div class="brand">
+        <div class="brand-avatar">AM</div>
+        <div class="brand-text">
+          <b id="navName">Ahmed Mostafa</b>
+          <span id="navRole">AI Solution Engineer</span>
+        </div>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#top" class="active">Overview</a>
+        <a href="#focus">Current Focus</a>
+        <a href="#projects" id="navProjectsCount">Projects</a>
+        <a href="#next">Roadmap</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" type="button" title="Toggle Light / Dark Theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+            </path>
+          </svg>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="icon-btn" type="button" onclick="window.print()" title="Print or Save as PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / PDF</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="top">
+    <div class="wrap">
+      <div class="eyebrow">
+        <span class="dot"></span>
+        <span id="eyebrowText">EXECUTIVE PROGRESS REPORT • NOVEMBER 2026</span>
+      </div>
+      <h1 id="title"></h1>
+      <p class="lede" id="lede"></p>
+
+      <!-- Executive Impact KPI Strip -->
+      <div class="kpi-grid" id="kpiGrid"></div>
+
+      <!-- Interactive Pipeline Strip -->
+      <div class="pipeline-header">
+        <span class="pipeline-title">2026 Engineering Portfolio (Click any card to jump)</span>
+        <div class="legend">
+          <span><i style="background:var(--done)"></i>Delivered in Production</span>
+          <span><i style="background:var(--active)"></i>Active POC / Ready for Prod</span>
+          <span><i style="background:var(--planned)"></i>Planned</span>
+        </div>
+      </div>
+      <div class="strip" id="strip"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Current Focus Section -->
+    <section id="focus">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>What I’m working on right now</h2>
+            <p class="sub">Immediate engineering priority and active validation.</p>
+          </div>
+        </div>
+        <div class="focus-grid" id="focusList"></div>
+      </div>
+    </section>
+
+    <!-- Projects & Proofs of Concept Section -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Projects & Proofs of Concept</h2>
+            <p class="sub">What we built, the problem it solves, and the measurable outcome.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Filter & Search Controls -->
+        <div class="controls-bar">
+          <div class="filter-tabs" id="filterTabs">
+            <button class="filter-btn active" data-filter="all" type="button">All Initiatives (8)</button>
+            <button class="filter-btn" data-filter="done" type="button">Delivered in Prod (2)</button>
+            <button class="filter-btn" data-filter="active" type="button">Active POCs & Ready Apps (6)</button>
+          </div>
+
+          <div class="controls-right">
+            <div class="search-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+              <input type="text" id="searchInput" placeholder="Filter by keyword, stack, or platform...">
+            </div>
+            <button class="toggle-specs-btn" id="toggleSpecsBtn" type="button">Expand All Technical Specs</button>
+          </div>
+        </div>
+
+        <div id="projectList"></div>
+      </div>
+    </section>
+
+    <!-- What's Next / Roadmap Section -->
+    <section id="next">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>What’s Next on the Roadmap</h2>
+            <p class="sub">Upcoming production rollouts, migrations, and scaling priorities.</p>
+          </div>
+        </div>
+        <ol class="road" id="road"></ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-bar">
+        <span id="lightboxCaption"></span>
+        <button class="lightbox-close" type="button" onclick="closeLightbox(event, true)">ESC / Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-inner" id="foot"></div>
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================================
+       EDIT THIS DATA OBJECT TO ADD OR MODIFY PROJECTS & PROGRESS
+       status: "done" | "active" | "planned"
+       media: array of items:
+         - { image: "path/to/img.png", alt: "Description", caption: "Caption" }
+         - { video: "path/to/video.mp4", caption: "Caption" }
+         - { youtube: "VIDEO_ID", caption: "Caption" }
+       ============================================================ */
+    const DATA = {
+      name: "Ahmed Mostafa",
+      role: "AI Solution Engineer",
+      updated: "November 2026",
+      title: "Engineering Roadmap & AI Proofs of Concept",
+      lede: "An executive overview of production systems, self-hosted AI proofs of concept, and upcoming engineering priorities—built for 100% data privacy and $0 recurring cloud AI costs.",
+
+      kpis: [
+        {
+          value: "8 Initiatives",
+          label: "2 Live in Prod • 6 POCs & Apps",
+          sub: "Full-year 2026 engineering delivery"
+        },
+        {
+          value: "$0 / mo",
+          label: "Recurring Cloud AI Spend",
+          sub: "100% self-hosted CPU/GPU inference"
+        },
+        {
+          value: "100% Private",
+          label: "Zero External PII Leakage",
+          sub: "All audio, tickets & data stay in-house"
+        }
+      ],
+
+      focus: [
+        {
+          title: "SSO Community Automation: Production Activation & Final Sign-Off",
+          text: "Completing final operational validation and stakeholder approval workflows to transition the enterprise middleware to 100% full production across all support queues, while resolving upstream Salesforce organization synchronization lag and hardening webhook pipelines.",
+          note: "Status: Production Finalization"
+        },
+        {
+          title: "Snowflake Support Operations & AI Analytics Engine",
+          text: "Conducting active user testing with support leadership on the 'Ask Analyst' generative AI deck engine, optimizing Snowflake SQL query execution over 16,400+ Freshdesk records, and sharpening semantic clustering for prompt-driven executive reports.",
+          note: "Status: Active POC Testing"
+        }
+      ],
+
+      projects: [
+        {
+          name: "Autonomous Voicemail-to-Ticket Triage Engine",
+          type: "Proof of Concept",
+          status: "active",
+          date: "Q1 2026",
+          metrics: [
+            { value: "< 60 sec", label: "End-to-end voicemail triage" },
+            { value: "10 Fields", label: "CRM attributes auto-filled" },
+            { value: "$0 API Cost", label: "100% local CPU execution" }
+          ],
+          tags: [
+            "POC",
+            "Zendesk",
+            "Local ASR (Faster-Whisper)",
+            "Local SLM (Qwen 3.5)",
+            "CPU Inference",
+            "Fuzzy Matching",
+            "Zero API Cost"
+          ],
+          idea: "Eliminate manual tier-1 voicemail delays and cloud AI fees. This engine intercepts customer voicemails, transcribes audio on local CPUs, extracts 10 structured ticket fields, matches callers to CRM accounts, escalates critical outages, and autofills Zendesk tickets without human touch.",
+          whatWeDo: [
+            {
+              title: "Sub-Minute Voicemail Ingestion",
+              text: "Captures voicemail audio directly from Zendesk webhooks, transcribing speech, matching accounts, and updating ticket fields automatically in under a minute."
+            },
+            {
+              title: "4x Faster Local Speech-to-Text",
+              text: "Runs Faster-Whisper (INT8 quantized on CTranslate2) on standard CPU cores, delivering 4x faster transcription than standard Whisper without expensive GPUs."
+            },
+            {
+              title: "Single-Pass 10-Field Extraction",
+              text: "Uses a local Qwen 3.5-4B model to extract 10 ticket fields at once—including organization, caller, callback info, product, summary, priority, and sentiment.",
+              subitems: [
+                {
+                  title: "Extracted Fields",
+                  text: "Organization, caller name, callback number, email, product line, 1-sentence summary, priority, ticket type, incident category, and customer sentiment."
+                },
+                {
+                  title: "Guaranteed Valid JSON",
+                  text: "Uses prompt prefilling to force clean JSON output and pins threads to physical CPU cores for consistent speed."
+                }
+              ]
+            },
+            {
+              title: "Smart Caller & Account Matching",
+              text: "Links spoken caller names and company mentions to exact CRM records even when audio is noisy or informal.",
+              subitems: [
+                {
+                  title: "Fuzzy String Matching",
+                  text: "Combines Jaro-Winkler similarity scoring (0.80 threshold) with prefix autocomplete and wildcard CRM queries."
+                },
+                {
+                  title: "Roster Cross-Check",
+                  text: "Verifies spoken names against user rosters inside candidate companies and infers product lines from account tags."
+                }
+              ]
+            },
+            {
+              title: "Automatic Outage Escalation & Guardrails",
+              text: "Pairs AI extraction with strict code rules to catch urgent incidents and prevent invalid ticket categories.",
+              subitems: [
+                {
+                  title: "Outage Detection",
+                  text: "Spots critical outage keywords (login failures, print stalls, payment drops) and immediately bumps priority to Urgent."
+                },
+                {
+                  title: "Category Lock",
+                  text: "Enforces strict rules between ticket types (Problem, Incident, Question, Task) and subcategories so the AI never invents tags."
+                }
+              ]
+            },
+            {
+              title: "100% On-Premise Privacy & $0 Fees",
+              text: "Runs entirely on internal CPUs with zero external API calls. Customer audio and PII never leave our network, satisfying GDPR, HIPAA, and SOC2."
+            }
+          ],
+          outcome: "Validated a working POC on Zendesk that triages voicemails in under 60 seconds with zero data leakage and $0 API costs.",
+          next: "Migrate this local voicemail triage pipeline from Zendesk to Freshdesk so all support channels run on one unified automation stack.",
+          note: "This POC was built and proven on Zendesk—our next step is porting the entire local pipeline to Freshdesk to unify support automation.",
+          media: [
+            {
+              image: "assets/zendesk-ticket-autofill.png",
+              alt: "Zendesk Automated Voicemail Triage and Ticket Autofill",
+              caption: "Live Zendesk Ticket: Automated speech transcription, caller & organization fuzzy matching, structured field extraction, and internal diagnostic note."
+            }
+          ]
+        },
+        {
+          name: "Freshchat Multi-Product Routing & Identity Gateway",
+          type: "Production System",
+          status: "done",
+          date: "Q1 2026",
+          metrics: [
+            { value: "17+ Brands", label: "Dynamically gated & routed" },
+            { value: "0% Misroutes", label: "Verified CRM entitlements" },
+            { value: "> 90% Saved", label: "Reduction in CRM API lookups" }
+          ],
+          tags: [
+            "Delivered",
+            "Freshdesk Omni",
+            "Node Microservice",
+            "JWT Auth",
+            "Multi-Tenant Routing",
+            "Zero-Trust Security"
+          ],
+          idea: "Replace an unverified, one-size-fits-all chat widget with a smart identity and routing gateway. It verifies which of Upland's 17+ software brands a user is licensed to use, signs security tokens, and hot-swaps chat widgets on the fly without reloading the page.",
+          whatWeDo: [
+            {
+              title: "License-Gated Chat Access",
+              text: "Checks the logged-in user's CRM entitlements via the Freshdesk Contacts API before showing the chat button, ensuring only licensed customers can start a session."
+            },
+            {
+              title: "Zero-Reload Dual-Widget Swapping",
+              text: "Smoothly switches between two separate Freshdesk Omni widget instances across 17+ product lines on a single page without screen flicker or page refreshes."
+            },
+            {
+              title: "Signed JWTs & Direct Queue Routing",
+              text: "Generates server-signed HS256 JWT tokens carrying the user's product brand, priority, and account ID—routing chats straight to the right specialist team."
+            },
+            {
+              title: "Pre-Verified Context for Freddy AI",
+              text: "Passes verified user identity, email, CRM ID, and product brand directly to Freshdesk's Freddy AI bot—skipping repetitive intake questions."
+            },
+            {
+              title: "Built-In API Rate-Limit Protection",
+              text: "Queues outbound CRM requests with a strict 750ms gap, capping traffic at 4,800 requests/hour—safely below Freshdesk's 5,000 req/hr limit."
+            },
+            {
+              title: "Two-Layer Speed Caching",
+              text: "Combines 15-minute server caching (cutting repeat CRM lookups by over 90%) with browser session storage for instant widget loading."
+            }
+          ],
+          outcome: "Live in production across 17+ enterprise brands. Eliminated misdirected chats, prevented 429 rate-limit errors, and enabled instant identity handoff to agents.",
+          next: "Expand Freddy AI self-service flows to more product lines and feed post-chat CSAT scores directly into portal analytics.",
+          note: "Major production win—we replaced legacy Zendesk Chat with zero downtime while solving Freshchat's single-widget limit across all 17+ brands.",
+          media: [
+            {
+              image: "assets/freshchat-product-selection.jpg",
+              alt: "Dynamic Product Selection and Entitlement Modal",
+              caption: "Customer Portal Integration: Dynamic product picker showing only the user's verified licensed software brands."
+            },
+            {
+              image: "assets/freshchat-widget-routed.jpg",
+              alt: "Direct Freshdesk Omni Topic Routing",
+              caption: "Direct Topic Routing: Authenticated widget hot-swapped and routed straight into the target product queue with pre-filled CRM context."
+            }
+          ]
+        },
+        {
+          name: "Autonomous Microsoft Teams Meeting Intelligence Bot",
+          type: "Proof of Concept",
+          status: "active",
+          date: "Q1 2026",
+          metrics: [
+            { value: "$10k–$25k/mo", label: "SaaS bot fees avoided" },
+            { value: "$0 STT Cost", label: "Harvests native live captions" },
+            { value: "Sub-Second", label: "Real-time WebSocket stream" }
+          ],
+          tags: [
+            "POC",
+            "Microsoft Teams",
+            "Headless Playwright",
+            "Real-Time Diarization",
+            "Zero-Cost STT",
+            "Docker",
+            "100% Private"
+          ],
+          idea: "Avoid $10k–$25k/month third-party meeting-bot subscriptions and Azure Graph admin roadblocks. Our containerized bot joins Microsoft Teams calls, captures live speaker-attributed captions directly from the browser, and streams structured transcripts to internal AI tools with zero data leakage.",
+          whatWeDo: [
+            {
+              title: "On-Demand Docker Bot Spawning",
+              text: "A lightweight REST launcher spins up an isolated, single-use headless browser container whenever a Teams meeting link is submitted."
+            },
+            {
+              title: "Automated Lobby Entry",
+              text: "Uses Playwright Chromium to bypass OS popups, fill in the bot's display name, and wait in the lobby until admitted."
+            },
+            {
+              title: "Zero-Cost Transcription Capture",
+              text: "Turns on Teams' built-in Live Closed Captions upon joining—getting accurate speech-to-text for free without paid Azure APIs or GPU Whisper servers."
+            },
+            {
+              title: "Live Speaker Tracking via DOM Observer",
+              text: "Watches caption updates in real time to capture who said what and when, filtering out partial drafts until sentences finish."
+            },
+            {
+              title: "Live WebSocket Streaming & Auto-Shutdown",
+              text: "Streams clean JSON transcripts live to AI copilots. Automatically leaves the call and destroys the container 2 minutes after humans exit."
+            },
+            {
+              title: "Real-Time Feed for Internal AI",
+              text: "Powers live meeting assistants, automated Jira/Linear action items, executive summaries, and searchable company memory (RAG)."
+            },
+            {
+              title: "Pennies per Hour & 100% In-House",
+              text: "Costs fractions of a cent per container hour (vs. $0.15–$0.50/hr for SaaS bots) while keeping sensitive meeting conversations strictly inside our network."
+            }
+          ],
+          outcome: "Validated POC proving automated container launch, lobby entry, speaker-attributed caption capture, and sub-second streaming without Azure admin permissions.",
+          next: "Connect Outlook/Google Calendar for automatic joining, move to AWS ECS Fargate for multi-meeting scaling, and add two-way meeting chat replies.",
+          note: "By observing Teams' native captions in the DOM, we bypassed both the hefty monthly 'bot tax' of SaaS vendors and months of Azure Graph approval delays.",
+          link: {
+            url: "https://github.com/upld-internal/Upland-Teams-Bot",
+            label: "GitHub: upld-internal/Upland-Teams-Bot →"
+          }
+        },
+        {
+          name: "Autonomous Multimedia Training Production Pipeline",
+          type: "Proof of Concept",
+          status: "active",
+          date: "Q2 2026",
+          metrics: [
+            { value: "1080p MP4", label: "Auto-recorded & narrated" },
+            { value: "2-Way Flow", label: "Docs-to-Video & Video-to-Course" },
+            { value: "100% Local", label: "Self-hosted voice, vision & LLM" }
+          ],
+          tags: [
+            "POC",
+            "CrewAI Agents",
+            "Voice Cloning (INT8)",
+            "Browser-Use Agent",
+            "Vision-LLM (Qwen 3.5)",
+            "Local TTS & ASR",
+            "Self-Hosted"
+          ],
+          idea: "Remove the bottleneck of manual video recording, scriptwriting, voiceover, and editing. This self-hosted pipeline automatically turns product docs—or raw silent screen recordings—into polished 1080p training videos, narrated voiceovers, and PowerPoint slide decks.",
+          whatWeDo: [
+            {
+              title: "End-to-End Training Asset Generator",
+              text: "Automatically produces custom PowerPoint decks (<code>.pptx</code>), 1080p UI walkthrough videos, and natural voiceovers without external production teams."
+            },
+            {
+              title: "Forward Pipeline (Topic/Docs &rarr; 1080p Video &amp; Slides)",
+              text: "Turns written documentation or prompts into complete video tutorials:",
+              subitems: [
+                {
+                  title: "Grounded Multi-Agent Research",
+                  text: "CrewAI agents crawl verified docs at <code>temperature=0.0</code> to write accurate scripts and grab real UI screenshots."
+                },
+                {
+                  title: "Autonomous Browser Recording",
+                  text: "A local computer-use model drives Playwright to click through live web apps (like Freshdesk), handling modals and scrolling while recording 1080p MP4 clips."
+                },
+                {
+                  title: "Local Voice Cloning",
+                  text: "Chatterbox-Turbo ONNX (INT8 on CPU) clones reference coach voices locally with natural pauses and expressions (<code>[chuckle]</code>, <code>[sigh]</code>)."
+                },
+                {
+                  title: "Automated Deck & Video Assembly",
+                  text: "Builds <code>.pptx</code> slides via <code>python-pptx</code> and stitches slides, screen clips, and voiceovers into 1080p videos using MoviePy and FFmpeg."
+                }
+              ]
+            },
+            {
+              title: "Reverse Pipeline (Raw Recording &rarr; Modular Course)",
+              text: "Turns silent screen captures or raw coaching calls into structured courses:",
+              subitems: [
+                {
+                  title: "Vision-LLM Action Detection",
+                  text: "Qwen 3.5-9B Vision analyzes video scene changes to identify every user click and screen transition."
+                },
+                {
+                  title: "Fast Local Audio Transcription",
+                  text: "Faster-Whisper Large-v3 (INT8) transcribes and timestamps raw coaching audio locally."
+                },
+                {
+                  title: "Smart Chapter Slicing",
+                  text: "Local Qwen models detect topic shifts, cut the video into bite-sized chapters, and generate matching slides and narration."
+                }
+              ]
+            },
+            {
+              title: "100% Self-Hosted & Private",
+              text: "Powered entirely by local open-weights models—zero API token costs and zero risk of leaking internal software workflows."
+            },
+            {
+              title: "Self-Healing Training Videos",
+              text: "When a product UI changes, re-running the pipeline automatically records fresh walkthrough clips and updates the deck."
+            },
+            {
+              title: "4 Outputs from 1 Run",
+              text: "Each run produces a 1080p video, standalone audio track, editable PowerPoint deck, and Markdown guide for wikis."
+            }
+          ],
+          outcome: "Validated end-to-end POC that autonomously generates 1080p narrated tutorials, slide decks, and written guides from product docs at $0 API cost.",
+          next: "Wrap the pipeline in a self-service internal web app and add one-click publishing to Freshdesk, Zendesk, and Confluence knowledge bases.",
+          note: "Wondering whose voice is in the demo video? I tested the local voice cloning model on Matt's voice—hope you can hear the resemblance!",
+          media: [
+            {
+              image: "assets/pipeline-architecture.png",
+              alt: "Dual-Direction Pipeline Architecture Diagram",
+              caption: "System Architecture: Forward (Docs to Video) and Reverse (Raw Media to Modular Course) Pipelines"
+            },
+            {
+              video: "assets/demo-video.mp4",
+              caption: "POC Demo: End-to-end automated training video & voiceover generation"
+            }
+          ]
+        },
+        {
+          name: "KCS v6 AI Coach & Quality Auditor",
+          type: "Proof of Concept",
+          status: "active",
+          date: "Q3 2026",
+          metrics: [
+            { value: "100% QA", label: "Pre-publish audit (vs 2–5% manual)" },
+            { value: "7-Point AQI", label: "Automated KCS v6 scoring" },
+            { value: "Zero Retries", label: "Grammar-constrained C++ JSON" }
+          ],
+          tags: [
+            "POC",
+            "Knowledge Governance",
+            "Live Docs Scraper",
+            "Hybrid RAG (BM25 + Dense)",
+            "Cross-Encoder Reranker",
+            "GBNF Grammars",
+            "Local C++ Qwen"
+          ],
+          idea: "Automate KCS® v6 training and article quality audits for support engineers. Combines a live documentation scraper, an interactive 'Solve Loop' ticket simulator, and an automated 7-point Article Quality Index (AQI) grader running on local C++ AI.",
+          whatWeDo: [
+            {
+              title: "Live KCS Standards Scraper",
+              text: "Automatically crawls official KCS v6 documentation to keep the AI mentor's knowledge index fresh and accurate."
+            },
+            {
+              title: "Interactive 'Solve Loop' Simulator",
+              text: "Gives engineers realistic practice tickets to master 'Search Early, Search Often'—coaching them in real time on whether to link an existing article or draft a new one."
+            },
+            {
+              title: "Automated 7-Point AQI Grader",
+              text: "Scores draft KB articles from 0–100 against the 7 KCS quality criteria (duplicates, clarity, environment specs, structure, etc.) and gives actionable coaching tips."
+            },
+            {
+              title: "2-Stage Hybrid Search (BM25 + Vector)",
+              text: "Blends exact keyword matching (BM25) with semantic vector search (Qdrant) in a 70/30 split so exact error codes and broad concepts are both found."
+            },
+            {
+              title: "Cross-Encoder Precision Reranking",
+              text: "Re-scores top search results with a transformer cross-encoder to filter out false matches before feeding context to the LLM."
+            },
+            {
+              title: "100% Valid JSON via GBNF Grammars",
+              text: "Uses C++ token masking (GGML BNF grammars) so the model physically cannot output broken JSON—eliminating parsing errors and retries."
+            },
+            {
+              title: "Fast Self-Hosted C++ Inference",
+              text: "Runs local Qwen models with GPU offloading and 8-bit KV caching over a 16k context window, streaming responses instantly at $0 API cost."
+            },
+            {
+              title: "100% Pre-Publication QA Coverage",
+              text: "Replaces manual spot-checks (which only audit 2–5% of articles monthly) by grading 100% of draft articles before they go live."
+            }
+          ],
+          outcome: "Deployed interactive MVP simulator and 7-point AQI grader, proving 10x coaching capacity and 100% reliable JSON grading via local inference.",
+          next: "Embed the AQI quality grader directly inside Freshdesk and RightAnswers article editors for real-time pre-publish checks.",
+          note: "You can try both the interactive Solve Loop simulator and the 7-point AQI article grader live in your browser at the link below.",
+          media: [
+            {
+              image: "assets/kcs-coach-simulator.jpg",
+              alt: "KCS v6 AI Coach and AQI Quality Auditor Interface",
+              caption: "Interactive KCS v6 Platform: Solve Loop ticket simulator with live AI mentor chat and 7-point AQI checklist."
+            }
+          ],
+          link: {
+            url: "https://ahmedmostafa-notabot.github.io/kcs-coach-bot/",
+            label: "Live Simulator: KCS v6 AI Coach →"
+          }
+        },
+        {
+          name: "SSO Auto Community — Enterprise Access & Lifecycle Middleware",
+          type: "Production System",
+          status: "done",
+          date: "Q3 – Q4 2026",
+          metrics: [
+            { value: "< 30 sec", label: "Zero-touch account provisioning" },
+            { value: "< 50 ms", label: "In-process ONNX CPU inference" },
+            { value: "100% Grounded", label: "Zero hallucinated orgs/products" }
+          ],
+          tags: [
+            "Delivered",
+            "Production Gateway",
+            "Freshdesk & RightAnswers",
+            "In-Process ONNX (Qwen 3.5)",
+            "Neuro-Symbolic AI",
+            "Zero PII Leakage",
+            "Auto-Deprovisioning"
+          ],
+          idea: "Eliminate manual tier-1 ticket work for customer portal onboarding and offboarding. This live production middleware connects Freshdesk and RightAnswers to handle the majority of all SSO support tickets—covering 4 primary types of support requests: new account onboarding, permission changes & gated approvals, third-party requester delegations, and automated contract deprovisioning—with zero-touch resolution in under 30 seconds.",
+          whatWeDo: [
+            {
+              title: "Majority SSO Ticket Coverage Across 4 Request Types",
+              text: "Autonomously processes the vast majority of incoming SSO support volume, covering four distinct request workflows: (1) New user portal onboarding and automated provisioning, (2) Permission updates and manager-gated escalations, (3) Contract termination and scheduled deprovisioning, and (4) Third-party IT requester delegation and corporate subsidiary matching."
+            },
+            {
+              title: "Sub-30-Second Auto-Provisioning",
+              text: "Reads incoming Freshdesk access requests, matches email domains to CRM companies, verifies active product contracts, and creates RightAnswers accounts automatically."
+            },
+            {
+              title: "In-Process CPU AI (<50ms, $0 Cost)",
+              text: "Runs a 4-bit quantized Qwen 3.5 model directly inside the Node runtime process via C++ ONNX bindings—delivering sub-50ms decisions on CPU with zero external API calls."
+            },
+            {
+              title: "Focused Micro-Agents for Complex Requests",
+              text: "Breaks complex ticket threads into specialized mini-tasks:",
+              subitems: [
+                {
+                  title: "Partial Approval Parsing",
+                  text: "Understands nuanced manager replies (e.g., 'Approve base community access, but DO NOT grant admin rights')."
+                },
+                {
+                  title: "Third-Party Requester Detection",
+                  text: "Detects when an IT admin or manager is requesting an account on behalf of another employee."
+                },
+                {
+                  title: "Subsidiary Matching",
+                  text: "Resolves multi-branch corporate divisions from conversational replies."
+                },
+                {
+                  title: "Bot & Spam Filtering",
+                  text: "Uses Shannon entropy and name registries to block keyboard mashing and spam submissions."
+                }
+              ]
+            },
+            {
+              title: "Zero Hallucinations via CRM Grounding",
+              text: "Cross-checks every AI output against live Freshdesk and Salesforce records so the system can never invent organizations or products."
+            },
+            {
+              title: "Manager Approval Loops for Gated Products",
+              text: "Routes restricted products (FileBound, AccuRoute, Eclipse) to product managers and sends automated 48-hour SLA reminders if unanswered."
+            },
+            {
+              title: "Smart Contract Offboarding",
+              text: "Schedules access removal on contract end dates—revoking expired product permissions while keeping active licenses intact."
+            },
+            {
+              title: "Full Ticket Audit Trail",
+              text: "Logs every match score, AI confidence rating, and API action as a timestamped private note on the Freshdesk ticket."
+            }
+          ],
+          outcome: "Live in production on enterprise server RTAUS1WEBPR03, autonomously handling the majority of SSO tickets across 4 core support request types in under 30 seconds with complete ticket audit trails.",
+          next: "Fix upstream Salesforce-to-Freshdesk company sync delays and complete final webhook security hardening.",
+          note: "Running the 4-bit Qwen model directly inside Node via ONNX on CPU was a huge win—sub-50ms speed, $0 cloud cost, and zero customer PII leaving our server.",
+          link: {
+            url: "https://github.com/upld-internal/SSOCommunityAutomation",
+            label: "GitHub: SSOCommunityAutomation (Live on RTAUS1WEBPR03) →"
+          }
+        },
+        {
+          name: "Freshdesk UI Control & Access Governance Suite (freshplug)",
+          type: "App (Ready for Deployment)",
+          status: "active",
+          date: "Q4 2026",
+          metrics: [
+            { value: "3 Actions", label: "Hide, Disable, or Block UI elements" },
+            { value: "Zero UI Lag", label: "Debounced DOM enforcement" },
+            { value: "Platform 3.0", label: "Encrypted FDK 3.0 architecture" }
+          ],
+          tags: [
+            "Ready for Deployment",
+            "Freshdesk",
+            "Freshworks Platform 3.0",
+            "Role-Based UI Governance",
+            "DOM Action Interceptor",
+            "Zero-Lag Engine"
+          ],
+          idea: "Give support admins fine-grained, role-based control over the Freshdesk agent interface. Admins can hide sensitive fields, disable buttons, or block unauthorized actions (like premature ticket closures) per agent role without buying expensive enterprise add-ons.",
+          whatWeDo: [
+            {
+              title: "Role-Based Field & Button Control",
+              text: "Enforces custom visibility and permission rules inside Freshdesk based on each support agent's assigned role."
+            },
+            {
+              title: "No-Code Admin Rule Builder",
+              text: "Gives administrators a clean portal inside Freshdesk to create and manage UI governance policies:",
+              subitems: [
+                {
+                  title: "Auto-Discovers Custom Fields",
+                  text: "Automatically fetches live Freshdesk roles, ticket fields, contact attributes, and company properties."
+                },
+                {
+                  title: "Hide, Disable, or Block",
+                  text: "Target Everyone, Specific Roles, or Exception Groups with three actions: Hide completely, Disable (grey out), or Block clicks with a custom warning popup."
+                },
+                {
+                  title: "Encrypted Cloud Storage",
+                  text: "Saves all governance rules securely in Freshworks Data Storage for instant loading."
+                }
+              ]
+            },
+            {
+              title: "Zero-Lag Background Enforcement",
+              text: "Applies UI rules smoothly in the background as tickets load:",
+              subitems: [
+                {
+                  title: "Debounced Event Listeners",
+                  text: "Runs on ticket activation with smart debouncing so agents never experience UI slowdown."
+                },
+                {
+                  title: "Native Interface Controls",
+                  text: "Hides or disables restricted ticket properties, reply buttons, and internal note controls."
+                },
+                {
+                  title: "Unauthorized Closure Blocker",
+                  text: "Intercepts premature 'Close Ticket' clicks and displays clear guidance on required steps before closing."
+                }
+              ]
+            },
+            {
+              title: "Secure Freshworks Platform 3.0 Build",
+              text: "Built on the latest FDK 3.0 Node runtime using encrypted server-side request templates so API keys are never exposed in the browser."
+            }
+          ],
+          outcome: "Completed and validated the full Freshworks Platform 3.0 application, including the admin rule builder and background interceptor—ready for production rollout.",
+          next: "Deploy to production Freshdesk (uplandsoftware.freshdesk.com) and roll out initial Tier-1 and Tier-2 agent governance rules.",
+          note: "Built this so support leaders can prevent accidental ticket closures and lock down sensitive fields by role without paying for costly tier upgrades.",
+          media: [
+            {
+              image: "assets/freshplug-admin-rules.jpg",
+              alt: "Freshdesk Role-Based UI Visibility Rules Admin Portal",
+              caption: "Freshplug Admin Portal: Rule builder for defining Hide, Disable, and Block policies across ticket fields and buttons by agent role."
+            }
+          ],
+          link: {
+            url: "https://github.com/upld-internal/Freshdesk-UI-Controller",
+            label: "GitHub: upld-internal/Freshdesk-UI-Controller →"
+          }
+        },
+        {
+          name: "Snowflake Support Operations Dashboard & AI Analytics Engine",
+          type: "Proof of Concept",
+          status: "active",
+          date: "Q4 2026",
+          metrics: [
+            { value: "16,400+ Tickets", label: "Live Snowflake warehouse feed" },
+            { value: "Ask Analyst", label: "Plain-English AI deck generator" },
+            { value: "100% Cited", label: "Findings linked to ticket IDs" }
+          ],
+          tags: [
+            "POC (In Testing)",
+            "Snowflake Warehouse",
+            "Freshdesk Telemetry",
+            "Generative AI Analytics",
+            "Local LLM (Qwen 3.5)",
+            "Semantic Clustering",
+            "Zero Cloud Cost"
+          ],
+          idea: "Turn 16,400+ raw Freshdesk tickets in Snowflake into live operational dashboards and instant executive presentations. Leaders can ask questions in plain English to cluster ticket themes, analyze customer sentiment, and generate slide decks backed by exact ticket citations.",
+          whatWeDo: [
+            {
+              title: "Live Snowflake Support Telemetry",
+              text: "Connects directly to Snowflake (16,400+ Freshdesk tickets) to track SLA health, active queues, unassigned backlogs, and resolution speeds in real time."
+            },
+            {
+              title: "'Ask Analyst' AI Deck Generator",
+              text: "Lets support leaders ask plain-English questions (e.g., <em>'How do customers feel this past month?'</em> or <em>'What drives escalations?'</em>) to generate executive summaries:",
+              subitems: [
+                {
+                  title: "Semantic Ticket Clustering",
+                  text: "Groups matching tickets into thematic clusters using embedding similarity and extracts representative sample sets."
+                },
+                {
+                  title: "Verified Ticket Citations",
+                  text: "Summarizes customer pain points and resolution patterns while citing exact Freshdesk ticket numbers for audit verification."
+                },
+                {
+                  title: "One-Click Deck, PDF & CSV Export",
+                  text: "Exports AI-generated findings directly into presentation slide decks, PDF reports, and raw CSV tables."
+                }
+              ]
+            },
+            {
+              title: "100% Private Local LLM Execution",
+              text: "Runs a quantized Qwen 3.5 model on internal hardware so sensitive customer tickets never touch third-party cloud APIs—ensuring complete privacy and $0 token costs."
+            },
+            {
+              title: "Interactive Dimensional Drill-Downs",
+              text: "Supports click-to-filter slicing across dates, product brands, support teams, priorities, and queues—recalculating median response and resolution times on the fly."
+            }
+          ],
+          outcome: "Working POC actively in testing with support leadership, combining live telemetry over 16,400+ Snowflake ticket records with natural-language slide deck generation.",
+          next: "Complete operational testing with support managers, optimize multi-year Snowflake SQL queries, and automate weekly executive digests to Slack.",
+          note: "The 'Ask Analyst' feature bridges the gap between high-level metric charts and real customer stories—leaders can type a plain-English question and immediately get a structured breakdown backed by real ticket IDs.",
+          media: [
+            {
+              image: "assets/snowflake-operations-overview.png",
+              alt: "Snowflake Customer Support Operations Overview Dashboard",
+              caption: "Support Operations Overview: Live telemetry across 16,400+ Freshdesk tickets in Snowflake showing volume trends, backlog health, and resolution speeds."
+            },
+            {
+              image: "assets/snowflake-ai-analyst.png",
+              alt: "Ask Analyst Generative AI Findings and Ticket Citations",
+              caption: "Ask Analyst Feature: AI-synthesized response to 'How do customers feel this past month?', clustering 154 tickets into thematic findings with direct ticket citations."
+            }
+          ],
+          link: {
+            url: "https://github.com/upld-internal/SSO-Support-Dashboard",
+            label: "GitHub: upld-internal/SSO-Support-Dashboard →"
+          }
+        }
+      ],
+
+      next: [
+        {
+          when: "Next Milestone",
+          title: "Full Production Rollout of SSO Community Automation",
+          text: "Transition SSO Community Automation to 100% full production across all ticket queues following operational sign-off, and resolve upstream Salesforce company sync lag.",
+          status: "active"
+        },
+        {
+          when: "Upcoming",
+          title: "Deploy Freshplug UI Governance & Port Voicemail Triage",
+          text: "Roll out the Freshplug UI Governance Suite to production Freshdesk, and migrate the local AI Voicemail Triage engine from Zendesk to Freshdesk.",
+          status: "planned"
+        },
+        {
+          when: "Roadmap",
+          title: "Scale Snowflake AI Support Intelligence",
+          text: "Optimize Snowflake SQL performance across multi-year datasets, sharpen topic clustering in 'Ask Analyst', and automate scheduled weekly executive digests.",
+          status: "planned"
+        }
+      ],
+      contact: "ahmostafa@uplandsoftware.com"
+    };
+    /* ============================================================ */
+
+    const $ = id => document.getElementById(id);
+    const statusLabel = {
+      done: "Delivered in Production",
+      active: "Active POC / Ready",
+      planned: "Planned"
+    };
+
+    // Populate Header & Navigation
+    document.title = `${DATA.name} — Executive Progress Report`;
+    $("navName").textContent = DATA.name;
+    $("navRole").textContent = DATA.role;
+    $("eyebrowText").textContent = `EXECUTIVE PROGRESS REPORT • UPDATED ${DATA.updated.toUpperCase()}`;
+    $("title").textContent = DATA.title;
+    $("lede").textContent = DATA.lede;
+    $("navProjectsCount").textContent = `Projects (${DATA.projects.length})`;
+
+    // Render Hero KPI Cards
+    $("kpiGrid").innerHTML = (DATA.kpis || []).map(k => `
+      <div class="kpi-card">
+        <div class="kpi-value">${k.value}</div>
+        <div class="kpi-label">${k.label}</div>
+        <div class="kpi-sub">${k.sub}</div>
+      </div>
+    `).join("");
+
+    // Render Interactive Portfolio Strip
+    $("strip").innerHTML = DATA.projects.map((p, i) => `
+      <a class="seg ${p.status}" href="#p${i}" onclick="highlightProject('p${i}')">
+        <div>
+          <div class="seg-top">
+            <span class="seg-idx">#0${i + 1}</span>
+            <span class="seg-qtr">${p.date}</span>
+          </div>
+          <div class="seg-name">${p.name}</div>
+        </div>
+        <span class="seg-status">● ${p.status === "done" ? "Delivered" : p.type}</span>
+      </a>
+    `).join("");
+
+    // Render Current Focus
+    $("focusList").innerHTML = DATA.focus.map(f => `
+      <div class="focus-card">
+        <div class="focus-body">
+          <div class="focus-eyebrow">
+            <span class="pulse-dot"></span>
+            <span>Active Priority</span>
+          </div>
+          <h3>${f.title}</h3>
+          <p>${f.text}</p>
+        </div>
+        ${f.note ? `<div class="focus-badge">${f.note}</div>` : ""}
+      </div>
+    `).join("");
+
+    // Render Bento Grid for "What We Do"
+    function renderBentoItems(items) {
+      if (!items) return "";
+      if (typeof items === "string") return `<p>${items}</p>`;
+      if (!Array.isArray(items)) return "";
+
+      return `<div class="bento-grid">` + items.map((item, idx) => {
+        if (typeof item === "string") {
+          return `
+            <div class="bento-item">
+              <p>${item}</p>
+            </div>`;
+        }
+        if (typeof item === "object") {
+          let subHtml = "";
+          if (item.subitems && item.subitems.length) {
+            subHtml = `
+              <details class="tech-details">
+                <summary>Technical Breakdown (${item.subitems.length})</summary>
+                <ul class="tech-sublist">
+                  ${item.subitems.map(sub =>
+              `<li>${typeof sub === "string" ? sub : `<strong>${sub.title}:</strong> ${sub.text}`}</li>`
+            ).join("")}
+                </ul>
+              </details>`;
+          }
+          return `
+            <div class="bento-item">
+              <div>
+                <div class="bento-item-head">
+                  <span class="bento-check">${idx + 1}</span>
+                  <h5>${item.title || ""}</h5>
+                </div>
+                <p>${item.text || ""}</p>
+              </div>
+              ${subHtml}
+            </div>`;
+        }
+        return "";
+      }).join("") + `</div>`;
+    }
+
+    // Handle missing local image/video gracefully in preview
+    window.handleMediaError = function (el, type, path, title) {
+      const frame = el.parentElement;
+      if (!frame) return;
+      frame.innerHTML = `
+        <div class="media-fallback">
+          <span class="fallback-badge">${type === "video" ? "🎬 Video Demo Asset" : "🖼️ Production Screenshot"}</span>
+          <div class="fallback-title">${title || "Project Visual Evidence"}</div>
+          <div class="fallback-path">Local path: ${path}</div>
+        </div>
+      `;
+    };
+
+    // Render Media Gallery with Lightbox & Graceful Fallback
+    function renderMedia(m) {
+      if (!m) return "";
+      const items = Array.isArray(m) ? m : [m];
+      const rendered = items.map(item => {
+        let content = "";
+        const safeCaption = (item.caption || item.alt || "").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        if (item.image) {
+          content = `
+            <div class="media-frame">
+              <img src="${item.image}" alt="${item.alt || ""}" loading="lazy"
+                   onclick="openLightbox('${item.image}', '${safeCaption}')"
+                   onerror="handleMediaError(this, 'image', '${item.image}', '${safeCaption}')">
+            </div>`;
+        } else if (item.video) {
+          content = `
+            <div class="media-frame">
+              <video src="${item.video}" controls preload="metadata"
+                     onerror="handleMediaError(this, 'video', '${item.video}', '${safeCaption}')">
+                Your browser does not support the video tag.
+              </video>
+            </div>`;
+        } else if (item.youtube) {
+          content = `
+            <div class="media-frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/${item.youtube}" title="Demo video" loading="lazy" allowfullscreen></iframe>
+            </div>`;
+        }
+        if (!content) return "";
+        const cap = item.caption ? `<div class="media-caption">${item.caption}</div>` : "";
+        return `<div class="media">${content}${cap}</div>`;
+      }).filter(Boolean).join("");
+
+      return rendered ? `<div class="media-container">${rendered}</div>` : "";
+    }
+
+    // Render Key Metrics Highlight Pills
+    function renderMetrics(metrics) {
+      if (!metrics || !metrics.length) return "";
+      return `
+        <div class="impact-pills">
+          ${metrics.map(m => `
+            <div class="impact-pill">
+              <div class="impact-icon">✦</div>
+              <div>
+                <strong>${m.value}</strong>
+                <span>${m.label}</span>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    // Render Projects List
+    function renderProjects() {
+      const doneCount = DATA.projects.filter(p => p.status === "done").length;
+      const activeCount = DATA.projects.filter(p => p.status !== "done").length;
+
+      const filterBtns = document.querySelectorAll("#filterTabs .filter-btn");
+      if (filterBtns.length >= 3) {
+        filterBtns[0].textContent = `All Initiatives (${DATA.projects.length})`;
+        filterBtns[1].textContent = `Delivered in Prod (${doneCount})`;
+        filterBtns[2].textContent = `Active POCs & Ready Apps (${activeCount})`;
+      }
+
+      $("projectList").innerHTML = DATA.projects.map((p, i) => `
+        <article class="project-card" id="p${i}" data-status="${p.status}">
+          <div class="project-topbar">
+            <div class="project-topbar-left">
+              <span class="project-num">#0${i + 1}</span>
+              <span class="badge ${p.status}">${statusLabel[p.status]}</span>
+              <span class="meta-pill">${p.type}</span>
+              <span class="meta-pill">${p.date}</span>
+            </div>
+            ${p.link ? `<a class="repo-link" href="${p.link.url}" target="_blank" rel="noopener">${p.link.label}</a>` : ""}
+          </div>
+
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3>${p.name}</h3>
+              <div class="tags">${(p.tags || []).map(t => `<span>${t}</span>`).join("")}</div>
+            </div>
+
+            ${renderMetrics(p.metrics)}
+
+            <div class="goal-box">
+              <span class="goal-label">The Goal & Executive Summary</span>
+              <p>${p.idea}</p>
+            </div>
+
+            ${renderMedia(p.media)}
+
+            <div class="block-label">
+              <span>How It Works — Key Capabilities</span>
+            </div>
+            ${renderBentoItems(p.whatWeDo || p.summary)}
+
+            <div class="outcome-split">
+              <div class="outcome-card">
+                <h4>✓ ${p.status === "done" ? "Production Outcome" : "POC Outcome & Validation"}</h4>
+                <p>${p.outcome}</p>
+              </div>
+              ${p.next ? `
+              <div class="outcome-card next-card">
+                <h4>→ What’s Next</h4>
+                <p>${Array.isArray(p.next) ? p.next.join(" ") : p.next}</p>
+              </div>` : ""}
+            </div>
+
+            ${p.note ? `
+            <div class="project-note">
+              <div class="note-avatar">AM</div>
+              <div class="note-content">
+                <span class="note-label">Engineering Note from Ahmed</span>
+                <p>“${p.note}”</p>
+              </div>
+            </div>` : ""}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    renderProjects();
+
+    // Render Roadmap
+    $("road").innerHTML = DATA.next.map(n => `
+      <li class="${n.status}">
+        <div>
+          <span class="when">● ${n.when}</span>
+          <h3>${n.title}</h3>
+          <p>${n.text}</p>
+        </div>
+      </li>
+    `).join("");
+
+    // Render Footer
+    $("foot").innerHTML = `
+      <div><strong>${DATA.name}</strong> — ${DATA.role} • Updated ${DATA.updated}</div>
+      <div>Contact: <a href="mailto:${DATA.contact}">${DATA.contact}</a></div>
+    `;
+
+    // Highlight project briefly when jumping from top strip
+    window.highlightProject = function (id) {
+      setTimeout(() => {
+        const el = $(id);
+        if (!el) return;
+        el.classList.add("highlight-flash");
+        setTimeout(() => el.classList.remove("highlight-flash"), 1600);
+      }, 150);
+    };
+
+    // Filter Tabs & Live Search
+    let currentFilter = "all";
+    let currentQuery = "";
+
+    function applyFilters() {
+      const cards = document.querySelectorAll(".project-card");
+      cards.forEach(card => {
+        const statusMatch = currentFilter === "all" || card.dataset.status === currentFilter;
+        const textMatch = !currentQuery || card.textContent.toLowerCase().includes(currentQuery);
+        card.style.display = statusMatch && textMatch ? "" : "none";
+      });
+    }
+
+    document.querySelectorAll("#filterTabs .filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#filterTabs .filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    $("searchInput").addEventListener("input", e => {
+      currentQuery = e.target.value.trim().toLowerCase();
+      applyFilters();
+    });
+
+    // Expand / Collapse All Technical Sub-Specs
+    let specsExpanded = false;
+    $("toggleSpecsBtn").addEventListener("click", () => {
+      specsExpanded = !specsExpanded;
+      document.querySelectorAll(".tech-details").forEach(d => {
+        d.open = specsExpanded;
+      });
+      $("toggleSpecsBtn").textContent = specsExpanded
+        ? "Collapse Technical Specs"
+        : "Expand All Technical Specs";
+    });
+
+    // Light / Dark Theme Toggle
+    const htmlEl = document.documentElement;
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      htmlEl.setAttribute("data-theme", "dark");
+      $("themeLabel").textContent = "Light";
+    }
+
+    $("themeBtn").addEventListener("click", () => {
+      const isDark = htmlEl.getAttribute("data-theme") === "dark";
+      const nextTheme = isDark ? "light" : "dark";
+      htmlEl.setAttribute("data-theme", nextTheme);
+      $("themeLabel").textContent = isDark ? "Dark" : "Light";
+    });
+
+    // Lightbox Modal Functions
+    window.openLightbox = function (src, caption) {
+      $("lightboxImg").src = src;
+      $("lightboxCaption").textContent = caption || "";
+      $("lightbox").classList.add("open");
+    };
+
+    window.closeLightbox = function (e, force) {
+      if (force || e.target.id === "lightbox") {
+        $("lightbox").classList.remove("open");
+        $("lightboxImg").src = "";
+      }
+    };
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        $("lightbox").classList.remove("open");
+      }
+    });
+  </script>
+</body>
+
+</html>
