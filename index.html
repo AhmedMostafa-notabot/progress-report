@@ -1085,8 +1085,9 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 420px;
-      object-fit: cover;
+      max-height: 480px;
+      object-fit: contain;
+      background: #090d16;
       cursor: zoom-in;
       transition: transform 0.25s ease;
     }
@@ -1327,8 +1328,8 @@
     }
 
     .lightbox-inner {
-      max-width: 1100px;
-      max-height: 90vh;
+      max-width: min(96vw, 1400px);
+      max-height: 94vh;
       background: var(--surface);
       border: 1px solid var(--line-strong);
       border-radius: var(--radius-md);
@@ -1340,9 +1341,10 @@
 
     .lightbox-inner img {
       max-width: 100%;
-      max-height: 78vh;
+      max-height: 82vh;
       object-fit: contain;
-      background: #000;
+      background: #090d16;
+      cursor: zoom-out;
     }
 
     .lightbox-bar {
@@ -1575,11 +1577,14 @@
 
   <!-- Image Lightbox Modal -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-    <div class="lightbox-inner">
-      <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
       <div class="lightbox-bar">
         <span id="lightboxCaption"></span>
-        <button class="lightbox-close" type="button" onclick="closeLightbox(event, true)">ESC / Close</button>
+        <div style="display:flex; gap:10px; align-items:center; flex-shrink:0;">
+          <a id="lightboxFullLink" href="#" target="_blank" rel="noopener" class="lightbox-close" style="text-decoration:none;">Open Full Image ↗</a>
+          <button class="lightbox-close" type="button" onclick="closeLightbox(event, true)">ESC / Close</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2379,19 +2384,20 @@
       const items = Array.isArray(m) ? m : [m];
       const rendered = items.map(item => {
         let content = "";
-        const safeCaption = (item.caption || item.alt || "").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        const cleanAlt = (item.alt || "").replace(/"/g, "&quot;");
+        const cleanCap = (item.caption || item.alt || "").replace(/"/g, "&quot;");
         if (item.image) {
           content = `
             <div class="media-frame">
-              <img src="${item.image}" alt="${item.alt || ""}" loading="lazy"
-                   onclick="openLightbox('${item.image}', '${safeCaption}')"
-                   onerror="handleMediaError(this, 'image', '${item.image}', '${safeCaption}')">
+              <img src="${item.image}" alt="${cleanAlt}" data-caption="${cleanCap}" loading="lazy"
+                   onclick="openLightbox(this)"
+                   onerror="handleMediaError(this, 'image', '${item.image}')">
             </div>`;
         } else if (item.video) {
           content = `
             <div class="media-frame">
               <video src="${item.video}" controls preload="metadata"
-                     onerror="handleMediaError(this, 'video', '${item.video}', '${safeCaption}')">
+                     onerror="handleMediaError(this, 'video', '${item.video}')">
                 Your browser does not support the video tag.
               </video>
             </div>`;
@@ -2579,9 +2585,19 @@
     });
 
     // Lightbox Modal Functions
-    window.openLightbox = function (src, caption) {
+    window.openLightbox = function (srcOrEl, caption) {
+      let src = srcOrEl;
+      let cap = caption;
+      if (srcOrEl instanceof Element) {
+        src = srcOrEl.getAttribute("src") || srcOrEl.src;
+        cap = srcOrEl.dataset.caption || srcOrEl.alt || "";
+      }
       $("lightboxImg").src = src;
-      $("lightboxCaption").textContent = caption || "";
+      $("lightboxCaption").textContent = cap || "";
+      const fullLink = $("lightboxFullLink");
+      if (fullLink) {
+        fullLink.href = src;
+      }
       $("lightbox").classList.add("open");
     };
 
