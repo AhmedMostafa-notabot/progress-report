@@ -8,15 +8,16 @@ This project contains your interactive, executive-ready progress report designed
 progress-report/
 ├── index.html                  # Interactive progress report dashboard
 ├── assets/
-│   ├── zendesk-ticket-autofill.png    # Project 1 live Zendesk triage demo screenshot
-│   ├── freshchat-product-selection.jpg # Project 2 dynamic entitlement modal screenshot
-│   ├── freshchat-widget-routed.jpg    # Project 2 Freshdesk Omni routed topic screenshot
-│   ├── pipeline-architecture.png      # Project 4 system architecture diagram
-│   ├── demo-video.mp4                 # Project 4 demo video recording
-│   ├── kcs-coach-simulator.jpg           # Project 5 KCS AI Coach simulator screenshot
-│   ├── freshplug-admin-rules.jpg         # Project 7 Freshplug UI governance rules screenshot
-│   ├── snowflake-operations-overview.png # Project 8 Snowflake Operations Overview screenshot
-│   ├── snowflake-ai-analyst.png          # Project 8 Ask Analyst Generative AI findings screenshot
+│   ├── zendesk-ticket-autofill.png       # Project 1 live Zendesk triage demo screenshot
+│   ├── freshchat-product-selection.jpg    # Project 2 dynamic entitlement modal screenshot
+│   ├── freshchat-widget-routed.jpg       # Project 2 Freshdesk Omni routed topic screenshot
+│   ├── troubleshooting-agent-demo.mp4    # Project 4 autonomous computer-use troubleshooting demo
+│   ├── pipeline-architecture.png         # Project 5 system architecture diagram
+│   ├── demo-video.mp4                    # Project 5 demo video recording
+│   ├── kcs-coach-simulator.jpg           # Project 6 KCS AI Coach simulator screenshot
+│   ├── freshplug-admin-rules.jpg         # Project 8 Freshplug UI governance rules screenshot
+│   ├── snowflake-operations-overview.png # Project 9 Snowflake Operations Overview screenshot
+│   ├── snowflake-ai-analyst.png          # Project 9 Ask Analyst Generative AI findings screenshot
 │   └── favicon.svg                       # Executive AM brand favicon
 └── README.md                   # Usage and quick-edit guide
 ```

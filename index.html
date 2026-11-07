@@ -1542,9 +1542,9 @@
         <!-- Interactive Filter & Search Controls -->
         <div class="controls-bar">
           <div class="filter-tabs" id="filterTabs">
-            <button class="filter-btn active" data-filter="all" type="button">All Initiatives (8)</button>
+            <button class="filter-btn active" data-filter="all" type="button">All Initiatives (9)</button>
             <button class="filter-btn" data-filter="done" type="button">Delivered in Prod (2)</button>
-            <button class="filter-btn" data-filter="active" type="button">Active POCs & Ready Apps (6)</button>
+            <button class="filter-btn" data-filter="active" type="button">Active POCs & Ready Apps (7)</button>
           </div>
 
           <div class="controls-right">
@@ -1616,8 +1616,8 @@
 
       kpis: [
         {
-          value: "8 Initiatives",
-          label: "2 Live in Prod • 6 POCs & Apps",
+          value: "9 Initiatives",
+          label: "2 Live in Prod • 7 POCs & Apps",
           sub: "Full-year 2026 engineering delivery"
         },
         {
@@ -1852,12 +1852,64 @@
           next: "Connect Outlook/Google Calendar for automatic joining, move to AWS ECS Fargate for multi-meeting scaling, and add two-way meeting chat replies.",
             note: "By observing Teams' native captions in the DOM, we bypassed both the hefty monthly 'bot tax' of SaaS vendors and months of Azure Graph approval delays.",
               link: {
-      url: "https://github.com/upld-internal/Upland-Teams-Bot",
-        label: "GitHub: upld-internal/Upland-Teams-Bot →"
-    }
+                url: "https://github.com/upld-internal/Upland-Teams-Bot",
+                label: "GitHub: upld-internal/Upland-Teams-Bot →"
+              }
         },
-    {
-      name: "Autonomous Multimedia Training Production Pipeline",
+        {
+          name: "Autonomous Computer-Use Agent for Cloud Troubleshooting & Bug Reproduction",
+          type: "Proof of Concept",
+          status: "active",
+          date: "Q2 2026",
+          metrics: [
+            { value: "Doc-Grounded", label: "Inspects live product documentation" },
+            { value: "Zero Hardcoding", label: "Autonomous OS & browser navigation" },
+            { value: "100% Local", label: "Private on-premise execution" }
+          ],
+          tags: [
+            "POC",
+            "Computer-Use Agent",
+            "Autonomous Troubleshooting",
+            "Bug Reproduction",
+            "Doc-Grounded Execution",
+            "FileBound",
+            "Zero Cloud Cost"
+          ],
+          idea: "Eliminate repetitive manual environment setup and bug verification for support escalations. An autonomous, locally deployed computer-use AI agent investigates customer-reported issues against cloud-deployed and on-premise Upland software instances—first reading official product documentation (demonstrated with FileBound) to learn complex administrative workflows, then navigating real desktop and browser environments to reproduce issues or execute complex tasks like configuring new projects from scratch.",
+          whatWeDo: [
+            {
+              title: "Documentation-Grounded Knowledge Ingestion",
+              text: "Before attempting tasks, the agent autonomously queries and reads official product documentation (demonstrated with FileBound administrative manuals) to understand navigation hierarchies, prerequisites, and mandatory form fields—eliminating reliance on fragile hardcoded selectors."
+            },
+            {
+              title: "Autonomous OS & Browser Computer-Use",
+              text: "Controls mouse, keyboard, and browser interfaces directly to navigate complex enterprise applications, executing multi-step workflows, filling out dynamic forms, and interacting with nested dialog modals just like a human engineer."
+            },
+            {
+              title: "Cloud Issue Verification & Bug Reproduction",
+              text: "Tests whether customer-reported issues reproduce on live cloud-deployed instances or local staging environments, capturing step-by-step diagnostic proof for tier-3 engineering and reducing manual triage time."
+            },
+            {
+              title: "Core Navigation Engine for Training Video Production",
+              text: "Serves as the autonomous execution core powering our Multimedia Training Pipeline (Project #5), driving live software walkthroughs and screen recordings for automatic video course production across any enterprise product."
+            },
+            {
+              title: "Generalizable Task Execution & 100% In-House Privacy",
+              text: "Built on an adaptable architecture that can be pointed at any enterprise workflow requiring computer interaction. Runs entirely within our local environment, ensuring internal instances, credentials, and customer data never touch external cloud AI providers."
+            }
+          ],
+          outcome: "Working proof of concept (POC) successfully validating autonomous documentation retrieval and end-to-end execution of complex administrative workflows—demonstrated by referencing FileBound manuals and creating a new project in a live FileBound environment without human intervention.",
+          next: "Connect the agent to incoming Freshdesk escalation tickets to automatically trigger bug reproduction runs upon ticket arrival, author standardized test profiles for additional Upland cloud products, and expand error-recovery routines for transient network latency.",
+          note: "The real power of this computer-use agent is its adaptability—instead of brittle scripts that break on minor UI tweaks, the agent consults official documentation just like an engineer would, figures out how to accomplish the task, and executes it. That versatility is why we also reused this exact computer-use core to drive our training video generator.",
+          media: [
+            {
+              video: "assets/troubleshooting-agent-demo.mp4",
+              caption: "Autonomous Troubleshooting Agent Demo: The agent reads FileBound product documentation to learn task prerequisites, then autonomously navigates the live FileBound instance to configure and create a new project."
+            }
+          ]
+        },
+        {
+          name: "Autonomous Multimedia Training Production Pipeline",
         type: "Proof of Concept",
           status: "active",
             date: "Q2 2026",
@@ -1890,8 +1942,8 @@
                             text: "CrewAI agents crawl verified docs at <code>temperature=0.0</code> to write accurate scripts and grab real UI screenshots."
                           },
                           {
-                            title: "Autonomous Browser Recording",
-                            text: "A local computer-use model drives Playwright to click through live web apps (like Freshdesk), handling modals and scrolling while recording 1080p MP4 clips."
+                            title: "Autonomous Computer-Use Recording",
+                            text: "Leverages the autonomous computer-use agent (Project #4) to drive live web and desktop apps (like Freshdesk and FileBound), handling modals and scrolling while recording 1080p MP4 clips."
                           },
                           {
                             title: "Local Voice Cloning",
@@ -1936,7 +1988,7 @@
                     ],
                       outcome: "Validated end-to-end POC that autonomously generates 1080p narrated tutorials, slide decks, and written guides from product docs at $0 API cost.",
                         next: "Wrap the pipeline in a self-service internal web app and add one-click publishing to Freshdesk, Zendesk, and Confluence knowledge bases.",
-                          note: "Wondering whose voice is in the demo video? I tested the local voice cloning model on Matt's voice—hope you can hear the resemblance!",
+                          note: "This pipeline builds directly on our autonomous computer-use agent from Project #4 to drive the live screen walkthroughs. (And if you're wondering whose voice that is in the narration demo, I tested it on Matt's voice—hope you can hear the resemblance!).",
                             media: [
                               {
                                 image: "assets/pipeline-architecture.png",
