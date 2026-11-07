@@ -16,7 +16,8 @@ progress-report/
 │   ├── kcs-coach-simulator.jpg           # Project 5 KCS AI Coach simulator screenshot
 │   ├── freshplug-admin-rules.jpg         # Project 7 Freshplug UI governance rules screenshot
 │   ├── snowflake-operations-overview.png # Project 8 Snowflake Operations Overview screenshot
-│   └── snowflake-ai-analyst.png          # Project 8 Ask Analyst Generative AI findings screenshot
+│   ├── snowflake-ai-analyst.png          # Project 8 Ask Analyst Generative AI findings screenshot
+│   └── favicon.svg                       # Executive AM brand favicon
 └── README.md                   # Usage and quick-edit guide
 ```
 
