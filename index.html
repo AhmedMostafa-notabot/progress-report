@@ -1584,7 +1584,8 @@
       <div class="lightbox-bar">
         <span id="lightboxCaption"></span>
         <div style="display:flex; gap:10px; align-items:center; flex-shrink:0;">
-          <a id="lightboxFullLink" href="#" target="_blank" rel="noopener" class="lightbox-close" style="text-decoration:none;">Open Full Image ↗</a>
+          <a id="lightboxFullLink" href="#" target="_blank" rel="noopener" class="lightbox-close"
+            style="text-decoration:none;">Open Full Image ↗</a>
           <button class="lightbox-close" type="button" onclick="closeLightbox(event, true)">ESC / Close</button>
         </div>
       </div>
@@ -1792,485 +1793,485 @@
               caption: "Direct Topic Routing: Authenticated widget hot-swapped and routed straight into the target product queue with pre-filled CRM context."
             }
           ],
-          link: {
-            url: "https://github.com/upld-internal/freshdesk-projects",
-            label: "GitHub: upld-internal/freshdesk-projects →"
-          }
-        },
-        {
-          name: "Autonomous Microsoft Teams Meeting Intelligence Bot",
-          type: "Proof of Concept",
-          status: "active",
-          date: "Q1 2026",
-          metrics: [
-            { value: "$10k–$25k/mo", label: "SaaS bot fees avoided" },
-            { value: "$0 STT Cost", label: "Harvests native live captions" },
-            { value: "Sub-Second", label: "Real-time WebSocket stream" }
-          ],
-          tags: [
+      link: {
+        url: "https://github.com/upld-internal/freshdesk-projects",
+        label: "GitHub: upld-internal/freshdesk-projects →"
+      }
+    },
+      {
+        name: "Autonomous Microsoft Teams Meeting Intelligence Bot",
+        type: "Proof of Concept",
+        status: "active",
+        date: "Q1 2026",
+        metrics: [
+          { value: "$10k–$25k/mo", label: "SaaS bot fees avoided" },
+          { value: "$0 STT Cost", label: "Harvests native live captions" },
+          { value: "Sub-Second", label: "Real-time WebSocket stream" }
+        ],
+        tags: [
             "POC",
-            "Microsoft Teams",
-            "Headless Playwright",
-            "Real-Time Diarization",
-            "Zero-Cost STT",
-            "Docker",
-            "100% Private"
+        "Microsoft Teams",
+        "Headless Playwright",
+        "Real-Time Diarization",
+        "Zero-Cost STT",
+        "Docker",
+        "100% Private"
           ],
-          idea: "Avoid $10k–$25k/month third-party meeting-bot subscriptions and Azure Graph admin roadblocks. Our containerized bot joins Microsoft Teams calls, captures live speaker-attributed captions directly from the browser, and streams structured transcripts to internal AI tools with zero data leakage.",
-          whatWeDo: [
-            {
-              title: "On-Demand Docker Bot Spawning",
-              text: "A lightweight REST launcher spins up an isolated, single-use headless browser container whenever a Teams meeting link is submitted."
-            },
-            {
-              title: "Automated Lobby Entry",
-              text: "Uses Playwright Chromium to bypass OS popups, fill in the bot's display name, and wait in the lobby until admitted."
-            },
-            {
-              title: "Zero-Cost Transcription Capture",
-              text: "Turns on Teams' built-in Live Closed Captions upon joining—getting accurate speech-to-text for free without paid Azure APIs or GPU Whisper servers."
-            },
-            {
-              title: "Live Speaker Tracking via DOM Observer",
-              text: "Watches caption updates in real time to capture who said what and when, filtering out partial drafts until sentences finish."
-            },
-            {
-              title: "Live WebSocket Streaming & Auto-Shutdown",
-              text: "Streams clean JSON transcripts live to AI copilots. Automatically leaves the call and destroys the container 2 minutes after humans exit."
-            },
-            {
-              title: "Real-Time Feed for Internal AI",
-              text: "Powers live meeting assistants, automated Jira/Linear action items, executive summaries, and searchable company memory (RAG)."
-            },
-            {
-              title: "Pennies per Hour & 100% In-House",
-              text: "Costs fractions of a cent per container hour (vs. $0.15–$0.50/hr for SaaS bots) while keeping sensitive meeting conversations strictly inside our network."
-            }
-          ],
-          outcome: "Validated POC proving automated container launch, lobby entry, speaker-attributed caption capture, and sub-second streaming without Azure admin permissions.",
-          next: "Connect Outlook/Google Calendar for automatic joining, move to AWS ECS Fargate for multi-meeting scaling, and add two-way meeting chat replies.",
-          note: "By observing Teams' native captions in the DOM, we bypassed both the hefty monthly 'bot tax' of SaaS vendors and months of Azure Graph approval delays.",
-          link: {
-            url: "https://github.com/upld-internal/Upland-Teams-Bot",
-            label: "GitHub: upld-internal/Upland-Teams-Bot →"
-          }
+    idea: "Avoid $10k–$25k/month third-party meeting-bot subscriptions and Azure Graph admin roadblocks. Our containerized bot joins Microsoft Teams calls, captures live speaker-attributed captions directly from the browser, and streams structured transcripts to internal AI tools with zero data leakage.",
+      whatWeDo: [
+        {
+          title: "On-Demand Docker Bot Spawning",
+          text: "A lightweight REST launcher spins up an isolated, single-use headless browser container whenever a Teams meeting link is submitted."
         },
         {
-          name: "Autonomous Multimedia Training Production Pipeline",
-          type: "Proof of Concept",
-          status: "active",
-          date: "Q2 2026",
-          metrics: [
-            { value: "1080p MP4", label: "Auto-recorded & narrated" },
-            { value: "2-Way Flow", label: "Docs-to-Video & Video-to-Course" },
-            { value: "100% Local", label: "Self-hosted voice, vision & LLM" }
-          ],
-          tags: [
-            "POC",
-            "CrewAI Agents",
-            "Voice Cloning (INT8)",
-            "Browser-Use Agent",
-            "Vision-LLM (Qwen 3.5)",
-            "Local TTS & ASR",
-            "Self-Hosted"
-          ],
-          idea: "Remove the bottleneck of manual video recording, scriptwriting, voiceover, and editing. This self-hosted pipeline automatically turns product docs—or raw silent screen recordings—into polished 1080p training videos, narrated voiceovers, and PowerPoint slide decks.",
-          whatWeDo: [
-            {
-              title: "End-to-End Training Asset Generator",
-              text: "Automatically produces custom PowerPoint decks (<code>.pptx</code>), 1080p UI walkthrough videos, and natural voiceovers without external production teams."
-            },
-            {
-              title: "Forward Pipeline (Topic/Docs &rarr; 1080p Video &amp; Slides)",
-              text: "Turns written documentation or prompts into complete video tutorials:",
-              subitems: [
-                {
-                  title: "Grounded Multi-Agent Research",
-                  text: "CrewAI agents crawl verified docs at <code>temperature=0.0</code> to write accurate scripts and grab real UI screenshots."
-                },
-                {
-                  title: "Autonomous Browser Recording",
-                  text: "A local computer-use model drives Playwright to click through live web apps (like Freshdesk), handling modals and scrolling while recording 1080p MP4 clips."
-                },
-                {
-                  title: "Local Voice Cloning",
-                  text: "Chatterbox-Turbo ONNX (INT8 on CPU) clones reference coach voices locally with natural pauses and expressions (<code>[chuckle]</code>, <code>[sigh]</code>)."
-                },
-                {
-                  title: "Automated Deck & Video Assembly",
-                  text: "Builds <code>.pptx</code> slides via <code>python-pptx</code> and stitches slides, screen clips, and voiceovers into 1080p videos using MoviePy and FFmpeg."
-                }
-              ]
-            },
-            {
-              title: "Reverse Pipeline (Raw Recording &rarr; Modular Course)",
-              text: "Turns silent screen captures or raw coaching calls into structured courses:",
-              subitems: [
-                {
-                  title: "Vision-LLM Action Detection",
-                  text: "Qwen 3.5-9B Vision analyzes video scene changes to identify every user click and screen transition."
-                },
-                {
-                  title: "Fast Local Audio Transcription",
-                  text: "Faster-Whisper Large-v3 (INT8) transcribes and timestamps raw coaching audio locally."
-                },
-                {
-                  title: "Smart Chapter Slicing",
-                  text: "Local Qwen models detect topic shifts, cut the video into bite-sized chapters, and generate matching slides and narration."
-                }
-              ]
-            },
-            {
-              title: "100% Self-Hosted & Private",
-              text: "Powered entirely by local open-weights models—zero API token costs and zero risk of leaking internal software workflows."
-            },
-            {
-              title: "Self-Healing Training Videos",
-              text: "When a product UI changes, re-running the pipeline automatically records fresh walkthrough clips and updates the deck."
-            },
-            {
-              title: "4 Outputs from 1 Run",
-              text: "Each run produces a 1080p video, standalone audio track, editable PowerPoint deck, and Markdown guide for wikis."
-            }
-          ],
-          outcome: "Validated end-to-end POC that autonomously generates 1080p narrated tutorials, slide decks, and written guides from product docs at $0 API cost.",
-          next: "Wrap the pipeline in a self-service internal web app and add one-click publishing to Freshdesk, Zendesk, and Confluence knowledge bases.",
-          note: "Wondering whose voice is in the demo video? I tested the local voice cloning model on Matt's voice—hope you can hear the resemblance!",
-          media: [
-            {
-              image: "assets/pipeline-architecture.png",
-              alt: "Dual-Direction Pipeline Architecture Diagram",
-              caption: "System Architecture: Forward (Docs to Video) and Reverse (Raw Media to Modular Course) Pipelines"
-            },
-            {
-              video: "assets/demo-video.mp4",
-              caption: "POC Demo: End-to-end automated training video & voiceover generation"
-            }
-          ]
+          title: "Automated Lobby Entry",
+          text: "Uses Playwright Chromium to bypass OS popups, fill in the bot's display name, and wait in the lobby until admitted."
         },
         {
-          name: "KCS v6 AI Coach & Quality Auditor",
-          type: "Proof of Concept",
-          status: "active",
-          date: "Q3 2026",
-          metrics: [
-            { value: "100% QA", label: "Pre-publish audit (vs 2–5% manual)" },
-            { value: "7-Point AQI", label: "Automated KCS v6 scoring" },
-            { value: "Zero Retries", label: "Grammar-constrained C++ JSON" }
-          ],
-          tags: [
-            "POC",
-            "Knowledge Governance",
-            "Live Docs Scraper",
-            "Hybrid RAG (BM25 + Dense)",
-            "Cross-Encoder Reranker",
-            "GBNF Grammars",
-            "Local C++ Qwen"
-          ],
-          idea: "Automate KCS® v6 training and article quality audits for support engineers. Combines a live documentation scraper, an interactive 'Solve Loop' ticket simulator, and an automated 7-point Article Quality Index (AQI) grader running on local C++ AI.",
-          whatWeDo: [
-            {
-              title: "Live KCS Standards Scraper",
-              text: "Automatically crawls official KCS v6 documentation to keep the AI mentor's knowledge index fresh and accurate."
-            },
-            {
-              title: "Interactive 'Solve Loop' Simulator",
-              text: "Gives engineers realistic practice tickets to master 'Search Early, Search Often'—coaching them in real time on whether to link an existing article or draft a new one."
-            },
-            {
-              title: "Automated 7-Point AQI Grader",
-              text: "Scores draft KB articles from 0–100 against the 7 KCS quality criteria (duplicates, clarity, environment specs, structure, etc.) and gives actionable coaching tips."
-            },
-            {
-              title: "2-Stage Hybrid Search (BM25 + Vector)",
-              text: "Blends exact keyword matching (BM25) with semantic vector search (Qdrant) in a 70/30 split so exact error codes and broad concepts are both found."
-            },
-            {
-              title: "Cross-Encoder Precision Reranking",
-              text: "Re-scores top search results with a transformer cross-encoder to filter out false matches before feeding context to the LLM."
-            },
-            {
-              title: "100% Valid JSON via GBNF Grammars",
-              text: "Uses C++ token masking (GGML BNF grammars) so the model physically cannot output broken JSON—eliminating parsing errors and retries."
-            },
-            {
-              title: "Fast Self-Hosted C++ Inference",
-              text: "Runs local Qwen models with GPU offloading and 8-bit KV caching over a 16k context window, streaming responses instantly at $0 API cost."
-            },
-            {
-              title: "100% Pre-Publication QA Coverage",
-              text: "Replaces manual spot-checks (which only audit 2–5% of articles monthly) by grading 100% of draft articles before they go live."
-            }
-          ],
-          outcome: "Deployed interactive MVP simulator and 7-point AQI grader, proving 10x coaching capacity and 100% reliable JSON grading via local inference.",
-          next: "Embed the AQI quality grader directly inside Freshdesk and RightAnswers article editors for real-time pre-publish checks.",
-          note: "You can try both the interactive Solve Loop simulator and the 7-point AQI article grader live in your browser at the link below.",
-          media: [
-            {
-              image: "assets/kcs-coach-simulator.jpg",
-              alt: "KCS v6 AI Coach and AQI Quality Auditor Interface",
-              caption: "Interactive KCS v6 Platform: Solve Loop ticket simulator with live AI mentor chat and 7-point AQI checklist."
-            }
-          ],
-          link: {
-            url: "https://ahmedmostafa-notabot.github.io/kcs-coach-bot/",
-            label: "Live Simulator: KCS v6 AI Coach →"
-          }
+          title: "Zero-Cost Transcription Capture",
+          text: "Turns on Teams' built-in Live Closed Captions upon joining—getting accurate speech-to-text for free without paid Azure APIs or GPU Whisper servers."
         },
         {
-          name: "SSO Auto Community — Enterprise Access & Lifecycle Middleware",
-          type: "Production System",
-          status: "done",
-          date: "Q3 – Q4 2026",
-          metrics: [
-            { value: "< 30 sec", label: "Zero-touch account provisioning" },
-            { value: "< 50 ms", label: "In-process ONNX CPU inference" },
-            { value: "100% Grounded", label: "Zero hallucinated orgs/products" }
-          ],
-          tags: [
-            "Delivered",
-            "Production Gateway",
-            "Freshdesk & RightAnswers",
-            "In-Process ONNX (Qwen 3.5)",
-            "Neuro-Symbolic AI",
-            "Zero PII Leakage",
-            "Auto-Deprovisioning"
-          ],
-          idea: "Eliminate manual tier-1 ticket work for customer portal onboarding and offboarding. This live production middleware connects Freshdesk and RightAnswers to handle the majority of all SSO support tickets—covering 4 primary types of support requests: new account onboarding, permission changes & gated approvals, third-party requester delegations, and automated contract deprovisioning—with zero-touch resolution in under 30 seconds.",
-          whatWeDo: [
-            {
-              title: "Majority SSO Ticket Coverage Across 4 Request Types",
-              text: "Autonomously processes the vast majority of incoming SSO support volume, covering four distinct request workflows: (1) New user portal onboarding and automated provisioning, (2) Permission updates and manager-gated escalations, (3) Contract termination and scheduled deprovisioning, and (4) Third-party IT requester delegation and corporate subsidiary matching."
-            },
-            {
-              title: "Sub-30-Second Auto-Provisioning",
-              text: "Reads incoming Freshdesk access requests, matches email domains to CRM companies, verifies active product contracts, and creates RightAnswers accounts automatically."
-            },
-            {
-              title: "In-Process CPU AI (<50ms, $0 Cost)",
-              text: "Runs a 4-bit quantized Qwen 3.5 model directly inside the Node runtime process via C++ ONNX bindings—delivering sub-50ms decisions on CPU with zero external API calls."
-            },
-            {
-              title: "Focused Micro-Agents for Complex Requests",
-              text: "Breaks complex ticket threads into specialized mini-tasks:",
-              subitems: [
-                {
-                  title: "Partial Approval Parsing",
-                  text: "Understands nuanced manager replies (e.g., 'Approve base community access, but DO NOT grant admin rights')."
-                },
-                {
-                  title: "Third-Party Requester Detection",
-                  text: "Detects when an IT admin or manager is requesting an account on behalf of another employee."
-                },
-                {
-                  title: "Subsidiary Matching",
-                  text: "Resolves multi-branch corporate divisions from conversational replies."
-                },
-                {
-                  title: "Bot & Spam Filtering",
-                  text: "Uses Shannon entropy and name registries to block keyboard mashing and spam submissions."
-                }
-              ]
-            },
-            {
-              title: "Zero Hallucinations via CRM Grounding",
-              text: "Cross-checks every AI output against live Freshdesk and Salesforce records so the system can never invent organizations or products."
-            },
-            {
-              title: "Manager Approval Loops for Gated Products",
-              text: "Routes restricted products (FileBound, AccuRoute, Eclipse) to product managers and sends automated 48-hour SLA reminders if unanswered."
-            },
-            {
-              title: "Smart Contract Offboarding",
-              text: "Schedules access removal on contract end dates—revoking expired product permissions while keeping active licenses intact."
-            },
-            {
-              title: "Full Ticket Audit Trail",
-              text: "Logs every match score, AI confidence rating, and API action as a timestamped private note on the Freshdesk ticket."
-            }
-          ],
-          outcome: "Live in production on enterprise server RTAUS1WEBPR03, autonomously handling the majority of SSO tickets across 4 core support request types in under 30 seconds with complete ticket audit trails.",
-          next: "Fix upstream Salesforce-to-Freshdesk company sync delays and complete final webhook security hardening.",
-          note: "Running the 4-bit Qwen model directly inside Node via ONNX on CPU was a huge win—sub-50ms speed, $0 cloud cost, and zero customer PII leaving our server.",
-          link: {
-            url: "https://github.com/upld-internal/SSOCommunityAutomation",
-            label: "GitHub: SSOCommunityAutomation (Live on RTAUS1WEBPR03) →"
-          }
+          title: "Live Speaker Tracking via DOM Observer",
+          text: "Watches caption updates in real time to capture who said what and when, filtering out partial drafts until sentences finish."
         },
         {
-          name: "Freshdesk UI Control & Access Governance Suite (freshplug)",
-          type: "App (Ready for Deployment)",
-          status: "active",
-          date: "Q4 2026",
-          metrics: [
-            { value: "3 Actions", label: "Hide, Disable, or Block UI elements" },
-            { value: "Zero UI Lag", label: "Debounced DOM enforcement" },
-            { value: "Platform 3.0", label: "Encrypted FDK 3.0 architecture" }
-          ],
-          tags: [
-            "Ready for Deployment",
-            "Freshdesk",
-            "Freshworks Platform 3.0",
-            "Role-Based UI Governance",
-            "DOM Action Interceptor",
-            "Zero-Lag Engine"
-          ],
-          idea: "Give support admins fine-grained, role-based control over the Freshdesk agent interface. Admins can hide sensitive fields, disable buttons, or block unauthorized actions (like premature ticket closures) per agent role without buying expensive enterprise add-ons.",
-          whatWeDo: [
-            {
-              title: "Role-Based Field & Button Control",
-              text: "Enforces custom visibility and permission rules inside Freshdesk based on each support agent's assigned role."
-            },
-            {
-              title: "No-Code Admin Rule Builder",
-              text: "Gives administrators a clean portal inside Freshdesk to create and manage UI governance policies:",
-              subitems: [
-                {
-                  title: "Auto-Discovers Custom Fields",
-                  text: "Automatically fetches live Freshdesk roles, ticket fields, contact attributes, and company properties."
-                },
-                {
-                  title: "Hide, Disable, or Block",
-                  text: "Target Everyone, Specific Roles, or Exception Groups with three actions: Hide completely, Disable (grey out), or Block clicks with a custom warning popup."
-                },
-                {
-                  title: "Encrypted Cloud Storage",
-                  text: "Saves all governance rules securely in Freshworks Data Storage for instant loading."
-                }
-              ]
-            },
-            {
-              title: "Zero-Lag Background Enforcement",
-              text: "Applies UI rules smoothly in the background as tickets load:",
-              subitems: [
-                {
-                  title: "Debounced Event Listeners",
-                  text: "Runs on ticket activation with smart debouncing so agents never experience UI slowdown."
-                },
-                {
-                  title: "Native Interface Controls",
-                  text: "Hides or disables restricted ticket properties, reply buttons, and internal note controls."
-                },
-                {
-                  title: "Unauthorized Closure Blocker",
-                  text: "Intercepts premature 'Close Ticket' clicks and displays clear guidance on required steps before closing."
-                }
-              ]
-            },
-            {
-              title: "Secure Freshworks Platform 3.0 Build",
-              text: "Built on the latest FDK 3.0 Node runtime using encrypted server-side request templates so API keys are never exposed in the browser."
-            }
-          ],
-          outcome: "Completed and validated the full Freshworks Platform 3.0 application, including the admin rule builder and background interceptor—ready for production rollout.",
-          next: "Deploy to production Freshdesk (uplandsoftware.freshdesk.com) and roll out initial Tier-1 and Tier-2 agent governance rules.",
-          note: "Built this so support leaders can prevent accidental ticket closures and lock down sensitive fields by role without paying for costly tier upgrades.",
-          media: [
-            {
-              image: "assets/freshplug-admin-rules.jpg",
-              alt: "Freshdesk Role-Based UI Visibility Rules Admin Portal",
-              caption: "Freshplug Admin Portal: Rule builder for defining Hide, Disable, and Block policies across ticket fields and buttons by agent role."
-            }
-          ],
-          link: {
-            url: "https://github.com/upld-internal/Freshdesk-UI-Controller",
-            label: "GitHub: upld-internal/Freshdesk-UI-Controller →"
-          }
+          title: "Live WebSocket Streaming & Auto-Shutdown",
+          text: "Streams clean JSON transcripts live to AI copilots. Automatically leaves the call and destroys the container 2 minutes after humans exit."
         },
         {
-          name: "Snowflake Support Operations Dashboard & AI Analytics Engine",
-          type: "Proof of Concept",
-          status: "active",
-          date: "Q4 2026",
-          metrics: [
-            { value: "16,400+ Tickets", label: "Live Snowflake warehouse feed" },
-            { value: "Ask Analyst", label: "Plain-English AI deck generator" },
-            { value: "100% Cited", label: "Findings linked to ticket IDs" }
-          ],
-          tags: [
-            "POC (In Testing)",
-            "Snowflake Warehouse",
-            "Freshdesk Telemetry",
-            "Generative AI Analytics",
-            "Local LLM (Qwen 3.5)",
-            "Semantic Clustering",
-            "Zero Cloud Cost"
-          ],
-          idea: "Turn 16,400+ raw Freshdesk tickets in Snowflake into live operational dashboards and instant executive presentations. Leaders can ask questions in plain English to cluster ticket themes, analyze customer sentiment, and generate slide decks backed by exact ticket citations.",
-          whatWeDo: [
-            {
-              title: "Live Snowflake Support Telemetry",
-              text: "Connects directly to Snowflake (16,400+ Freshdesk tickets) to track SLA health, active queues, unassigned backlogs, and resolution speeds in real time."
-            },
-            {
-              title: "'Ask Analyst' AI Deck Generator",
-              text: "Lets support leaders ask plain-English questions (e.g., <em>'How do customers feel this past month?'</em> or <em>'What drives escalations?'</em>) to generate executive summaries:",
-              subitems: [
-                {
-                  title: "Semantic Ticket Clustering",
-                  text: "Groups matching tickets into thematic clusters using embedding similarity and extracts representative sample sets."
-                },
-                {
-                  title: "Verified Ticket Citations",
-                  text: "Summarizes customer pain points and resolution patterns while citing exact Freshdesk ticket numbers for audit verification."
-                },
-                {
-                  title: "One-Click Deck, PDF & CSV Export",
-                  text: "Exports AI-generated findings directly into presentation slide decks, PDF reports, and raw CSV tables."
-                }
-              ]
-            },
-            {
-              title: "100% Private Local LLM Execution",
-              text: "Runs a quantized Qwen 3.5 model on internal hardware so sensitive customer tickets never touch third-party cloud APIs—ensuring complete privacy and $0 token costs."
-            },
-            {
-              title: "Interactive Dimensional Drill-Downs",
-              text: "Supports click-to-filter slicing across dates, product brands, support teams, priorities, and queues—recalculating median response and resolution times on the fly."
-            }
-          ],
-          outcome: "Working POC actively in testing with support leadership, combining live telemetry over 16,400+ Snowflake ticket records with natural-language slide deck generation.",
-          next: "Complete operational testing with support managers, optimize multi-year Snowflake SQL queries, and automate weekly executive digests to Slack.",
-          note: "The 'Ask Analyst' feature bridges the gap between high-level metric charts and real customer stories—leaders can type a plain-English question and immediately get a structured breakdown backed by real ticket IDs.",
-          media: [
-            {
-              image: "assets/snowflake-operations-overview.png",
-              alt: "Snowflake Customer Support Operations Overview Dashboard",
-              caption: "Support Operations Overview: Live telemetry across 16,400+ Freshdesk tickets in Snowflake showing volume trends, backlog health, and resolution speeds."
-            },
-            {
-              image: "assets/snowflake-ai-analyst.png",
-              alt: "Ask Analyst Generative AI Findings and Ticket Citations",
-              caption: "Ask Analyst Feature: AI-synthesized response to 'How do customers feel this past month?', clustering 154 tickets into thematic findings with direct ticket citations."
-            }
-          ],
-          link: {
-            url: "https://github.com/upld-internal/SSO-Support-Dashboard",
-            label: "GitHub: upld-internal/SSO-Support-Dashboard →"
-          }
+          title: "Real-Time Feed for Internal AI",
+          text: "Powers live meeting assistants, automated Jira/Linear action items, executive summaries, and searchable company memory (RAG)."
+        },
+        {
+          title: "Pennies per Hour & 100% In-House",
+          text: "Costs fractions of a cent per container hour (vs. $0.15–$0.50/hr for SaaS bots) while keeping sensitive meeting conversations strictly inside our network."
         }
+      ],
+        outcome: "Validated POC proving automated container launch, lobby entry, speaker-attributed caption capture, and sub-second streaming without Azure admin permissions.",
+          next: "Connect Outlook/Google Calendar for automatic joining, move to AWS ECS Fargate for multi-meeting scaling, and add two-way meeting chat replies.",
+            note: "By observing Teams' native captions in the DOM, we bypassed both the hefty monthly 'bot tax' of SaaS vendors and months of Azure Graph approval delays.",
+              link: {
+      url: "https://github.com/upld-internal/Upland-Teams-Bot",
+        label: "GitHub: upld-internal/Upland-Teams-Bot →"
+    }
+        },
+    {
+      name: "Autonomous Multimedia Training Production Pipeline",
+        type: "Proof of Concept",
+          status: "active",
+            date: "Q2 2026",
+              metrics: [
+                { value: "1080p MP4", label: "Auto-recorded & narrated" },
+                { value: "2-Way Flow", label: "Docs-to-Video & Video-to-Course" },
+                { value: "100% Local", label: "Self-hosted voice, vision & LLM" }
+              ],
+                tags: [
+                  "POC",
+                  "CrewAI Agents",
+                  "Voice Cloning (INT8)",
+                  "Browser-Use Agent",
+                  "Vision-LLM (Qwen 3.5)",
+                  "Local TTS & ASR",
+                  "Self-Hosted"
+                ],
+                  idea: "Remove the bottleneck of manual video recording, scriptwriting, voiceover, and editing. This self-hosted pipeline automatically turns product docs—or raw silent screen recordings—into polished 1080p training videos, narrated voiceovers, and PowerPoint slide decks.",
+                    whatWeDo: [
+                      {
+                        title: "End-to-End Training Asset Generator",
+                        text: "Automatically produces custom PowerPoint decks (<code>.pptx</code>), 1080p UI walkthrough videos, and natural voiceovers without external production teams."
+                      },
+                      {
+                        title: "Forward Pipeline (Topic/Docs &rarr; 1080p Video &amp; Slides)",
+                        text: "Turns written documentation or prompts into complete video tutorials:",
+                        subitems: [
+                          {
+                            title: "Grounded Multi-Agent Research",
+                            text: "CrewAI agents crawl verified docs at <code>temperature=0.0</code> to write accurate scripts and grab real UI screenshots."
+                          },
+                          {
+                            title: "Autonomous Browser Recording",
+                            text: "A local computer-use model drives Playwright to click through live web apps (like Freshdesk), handling modals and scrolling while recording 1080p MP4 clips."
+                          },
+                          {
+                            title: "Local Voice Cloning",
+                            text: "Chatterbox-Turbo ONNX (INT8 on CPU) clones reference coach voices locally with natural pauses and expressions (<code>[chuckle]</code>, <code>[sigh]</code>)."
+                          },
+                          {
+                            title: "Automated Deck & Video Assembly",
+                            text: "Builds <code>.pptx</code> slides via <code>python-pptx</code> and stitches slides, screen clips, and voiceovers into 1080p videos using MoviePy and FFmpeg."
+                          }
+                        ]
+                      },
+                      {
+                        title: "Reverse Pipeline (Raw Recording &rarr; Modular Course)",
+                        text: "Turns silent screen captures or raw coaching calls into structured courses:",
+                        subitems: [
+                          {
+                            title: "Vision-LLM Action Detection",
+                            text: "Qwen 3.5-9B Vision analyzes video scene changes to identify every user click and screen transition."
+                          },
+                          {
+                            title: "Fast Local Audio Transcription",
+                            text: "Faster-Whisper Large-v3 (INT8) transcribes and timestamps raw coaching audio locally."
+                          },
+                          {
+                            title: "Smart Chapter Slicing",
+                            text: "Local Qwen models detect topic shifts, cut the video into bite-sized chapters, and generate matching slides and narration."
+                          }
+                        ]
+                      },
+                      {
+                        title: "100% Self-Hosted & Private",
+                        text: "Powered entirely by local open-weights models—zero API token costs and zero risk of leaking internal software workflows."
+                      },
+                      {
+                        title: "Self-Healing Training Videos",
+                        text: "When a product UI changes, re-running the pipeline automatically records fresh walkthrough clips and updates the deck."
+                      },
+                      {
+                        title: "4 Outputs from 1 Run",
+                        text: "Each run produces a 1080p video, standalone audio track, editable PowerPoint deck, and Markdown guide for wikis."
+                      }
+                    ],
+                      outcome: "Validated end-to-end POC that autonomously generates 1080p narrated tutorials, slide decks, and written guides from product docs at $0 API cost.",
+                        next: "Wrap the pipeline in a self-service internal web app and add one-click publishing to Freshdesk, Zendesk, and Confluence knowledge bases.",
+                          note: "Wondering whose voice is in the demo video? I tested the local voice cloning model on Matt's voice—hope you can hear the resemblance!",
+                            media: [
+                              {
+                                image: "assets/pipeline-architecture.png",
+                                alt: "Dual-Direction Pipeline Architecture Diagram",
+                                caption: "System Architecture: Forward (Docs to Video) and Reverse (Raw Media to Modular Course) Pipelines"
+                              },
+                              {
+                                video: "assets/demo-video.mp4",
+                                caption: "POC Demo: End-to-end automated training video & voiceover generation"
+                              }
+                            ]
+    },
+    {
+      name: "KCS v6 AI Coach & Quality Auditor",
+        type: "Proof of Concept",
+          status: "active",
+            date: "Q3 2026",
+              metrics: [
+                { value: "100% QA", label: "Pre-publish audit (vs 2–5% manual)" },
+                { value: "7-Point AQI", label: "Automated KCS v6 scoring" },
+                { value: "Zero Retries", label: "Grammar-constrained C++ JSON" }
+              ],
+                tags: [
+                  "POC",
+                  "Knowledge Governance",
+                  "Live Docs Scraper",
+                  "Hybrid RAG (BM25 + Dense)",
+                  "Cross-Encoder Reranker",
+                  "GBNF Grammars",
+                  "Local C++ Qwen"
+                ],
+                  idea: "Automate KCS® v6 training and article quality audits for support engineers. Combines a live documentation scraper, an interactive 'Solve Loop' ticket simulator, and an automated 7-point Article Quality Index (AQI) grader running on local C++ AI.",
+                    whatWeDo: [
+                      {
+                        title: "Live KCS Standards Scraper",
+                        text: "Automatically crawls official KCS v6 documentation to keep the AI mentor's knowledge index fresh and accurate."
+                      },
+                      {
+                        title: "Interactive 'Solve Loop' Simulator",
+                        text: "Gives engineers realistic practice tickets to master 'Search Early, Search Often'—coaching them in real time on whether to link an existing article or draft a new one."
+                      },
+                      {
+                        title: "Automated 7-Point AQI Grader",
+                        text: "Scores draft KB articles from 0–100 against the 7 KCS quality criteria (duplicates, clarity, environment specs, structure, etc.) and gives actionable coaching tips."
+                      },
+                      {
+                        title: "2-Stage Hybrid Search (BM25 + Vector)",
+                        text: "Blends exact keyword matching (BM25) with semantic vector search (Qdrant) in a 70/30 split so exact error codes and broad concepts are both found."
+                      },
+                      {
+                        title: "Cross-Encoder Precision Reranking",
+                        text: "Re-scores top search results with a transformer cross-encoder to filter out false matches before feeding context to the LLM."
+                      },
+                      {
+                        title: "100% Valid JSON via GBNF Grammars",
+                        text: "Uses C++ token masking (GGML BNF grammars) so the model physically cannot output broken JSON—eliminating parsing errors and retries."
+                      },
+                      {
+                        title: "Fast Self-Hosted C++ Inference",
+                        text: "Runs local Qwen models with GPU offloading and 8-bit KV caching over a 16k context window, streaming responses instantly at $0 API cost."
+                      },
+                      {
+                        title: "100% Pre-Publication QA Coverage",
+                        text: "Replaces manual spot-checks (which only audit 2–5% of articles monthly) by grading 100% of draft articles before they go live."
+                      }
+                    ],
+                      outcome: "Deployed interactive MVP simulator and 7-point AQI grader, proving 10x coaching capacity and 100% reliable JSON grading via local inference.",
+                        next: "Embed the AQI quality grader directly inside Freshdesk and RightAnswers article editors for real-time pre-publish checks.",
+                          note: "You can try both the interactive Solve Loop simulator and the 7-point AQI article grader live in your browser at the link below.",
+                            media: [
+                              {
+                                image: "assets/kcs-coach-simulator.jpg",
+                                alt: "KCS v6 AI Coach and AQI Quality Auditor Interface",
+                                caption: "Interactive KCS v6 Platform: Solve Loop ticket simulator with live AI mentor chat and 7-point AQI checklist."
+                              }
+                            ],
+                              link: {
+        url: "https://ahmedmostafa-notabot.github.io/kcs-coach-bot/",
+          label: "Live Simulator: KCS v6 AI Coach →"
+      }
+    },
+    {
+      name: "SSO Auto Community — Enterprise Access & Lifecycle Middleware",
+        type: "Production System",
+          status: "done",
+            date: "Q3 – Q4 2026",
+              metrics: [
+                { value: "< 30 sec", label: "Zero-touch account provisioning" },
+                { value: "< 50 ms", label: "In-process ONNX CPU inference" },
+                { value: "100% Grounded", label: "Zero hallucinated orgs/products" }
+              ],
+                tags: [
+                  "Delivered",
+                  "Production Gateway",
+                  "Freshdesk & RightAnswers",
+                  "In-Process ONNX (Qwen 3.5)",
+                  "Neuro-Symbolic AI",
+                  "Zero PII Leakage",
+                  "Auto-Deprovisioning"
+                ],
+                  idea: "Eliminate manual tier-1 ticket work for customer portal onboarding and offboarding. This live production middleware connects Freshdesk and RightAnswers to handle the majority of all SSO support tickets—covering 4 primary types of support requests: new account onboarding, permission changes & gated approvals, third-party requester delegations, and automated contract deprovisioning—with zero-touch resolution in under 30 seconds.",
+                    whatWeDo: [
+                      {
+                        title: "Majority SSO Ticket Coverage Across 4 Request Types",
+                        text: "Autonomously processes the vast majority of incoming SSO support volume, covering four distinct request workflows: (1) New user portal onboarding and automated provisioning, (2) Permission updates and manager-gated escalations, (3) Contract termination and scheduled deprovisioning, and (4) Third-party IT requester delegation and corporate subsidiary matching."
+                      },
+                      {
+                        title: "Sub-30-Second Auto-Provisioning",
+                        text: "Reads incoming Freshdesk access requests, matches email domains to CRM companies, verifies active product contracts, and creates RightAnswers accounts automatically."
+                      },
+                      {
+                        title: "In-Process CPU AI (<50ms, $0 Cost)",
+                        text: "Runs a 4-bit quantized Qwen 3.5 model directly inside the Node runtime process via C++ ONNX bindings—delivering sub-50ms decisions on CPU with zero external API calls."
+                      },
+                      {
+                        title: "Focused Micro-Agents for Complex Requests",
+                        text: "Breaks complex ticket threads into specialized mini-tasks:",
+                        subitems: [
+                          {
+                            title: "Partial Approval Parsing",
+                            text: "Understands nuanced manager replies (e.g., 'Approve base community access, but DO NOT grant admin rights')."
+                          },
+                          {
+                            title: "Third-Party Requester Detection",
+                            text: "Detects when an IT admin or manager is requesting an account on behalf of another employee."
+                          },
+                          {
+                            title: "Subsidiary Matching",
+                            text: "Resolves multi-branch corporate divisions from conversational replies."
+                          },
+                          {
+                            title: "Bot & Spam Filtering",
+                            text: "Uses Shannon entropy and name registries to block keyboard mashing and spam submissions."
+                          }
+                        ]
+                      },
+                      {
+                        title: "Zero Hallucinations via CRM Grounding",
+                        text: "Cross-checks every AI output against live Freshdesk and Salesforce records so the system can never invent organizations or products."
+                      },
+                      {
+                        title: "Manager Approval Loops for Gated Products",
+                        text: "Routes restricted products (FileBound, AccuRoute, Eclipse) to product managers and sends automated 48-hour SLA reminders if unanswered."
+                      },
+                      {
+                        title: "Smart Contract Offboarding",
+                        text: "Schedules access removal on contract end dates—revoking expired product permissions while keeping active licenses intact."
+                      },
+                      {
+                        title: "Full Ticket Audit Trail",
+                        text: "Logs every match score, AI confidence rating, and API action as a timestamped private note on the Freshdesk ticket."
+                      }
+                    ],
+                      outcome: "Live in production on enterprise server RTAUS1WEBPR03, autonomously handling the majority of SSO tickets across 4 core support request types in under 30 seconds with complete ticket audit trails.",
+                        next: "Fix upstream Salesforce-to-Freshdesk company sync delays and complete final webhook security hardening.",
+                          note: "Running the 4-bit Qwen model directly inside Node via ONNX on CPU was a huge win—sub-50ms speed, $0 cloud cost, and zero customer PII leaving our server.",
+                            link: {
+        url: "https://github.com/upld-internal/SSOCommunityAutomation",
+          label: "GitHub: SSOCommunityAutomation (Live on RTAUS1WEBPR03) →"
+      }
+    },
+    {
+      name: "Freshdesk UI Control & Access Governance Suite (freshplug)",
+        type: "App (Ready for Deployment)",
+          status: "active",
+            date: "Q4 2026",
+              metrics: [
+                { value: "3 Actions", label: "Hide, Disable, or Block UI elements" },
+                { value: "Zero UI Lag", label: "Debounced DOM enforcement" },
+                { value: "Platform 3.0", label: "Encrypted FDK 3.0 architecture" }
+              ],
+                tags: [
+                  "Ready for Deployment",
+                  "Freshdesk",
+                  "Freshworks Platform 3.0",
+                  "Role-Based UI Governance",
+                  "DOM Action Interceptor",
+                  "Zero-Lag Engine"
+                ],
+                  idea: "Give support admins fine-grained, role-based control over the Freshdesk agent interface. Admins can hide sensitive fields, disable buttons, or block unauthorized actions (like premature ticket closures) per agent role without buying expensive enterprise add-ons.",
+                    whatWeDo: [
+                      {
+                        title: "Role-Based Field & Button Control",
+                        text: "Enforces custom visibility and permission rules inside Freshdesk based on each support agent's assigned role."
+                      },
+                      {
+                        title: "No-Code Admin Rule Builder",
+                        text: "Gives administrators a clean portal inside Freshdesk to create and manage UI governance policies:",
+                        subitems: [
+                          {
+                            title: "Auto-Discovers Custom Fields",
+                            text: "Automatically fetches live Freshdesk roles, ticket fields, contact attributes, and company properties."
+                          },
+                          {
+                            title: "Hide, Disable, or Block",
+                            text: "Target Everyone, Specific Roles, or Exception Groups with three actions: Hide completely, Disable (grey out), or Block clicks with a custom warning popup."
+                          },
+                          {
+                            title: "Encrypted Cloud Storage",
+                            text: "Saves all governance rules securely in Freshworks Data Storage for instant loading."
+                          }
+                        ]
+                      },
+                      {
+                        title: "Zero-Lag Background Enforcement",
+                        text: "Applies UI rules smoothly in the background as tickets load:",
+                        subitems: [
+                          {
+                            title: "Debounced Event Listeners",
+                            text: "Runs on ticket activation with smart debouncing so agents never experience UI slowdown."
+                          },
+                          {
+                            title: "Native Interface Controls",
+                            text: "Hides or disables restricted ticket properties, reply buttons, and internal note controls."
+                          },
+                          {
+                            title: "Unauthorized Closure Blocker",
+                            text: "Intercepts premature 'Close Ticket' clicks and displays clear guidance on required steps before closing."
+                          }
+                        ]
+                      },
+                      {
+                        title: "Secure Freshworks Platform 3.0 Build",
+                        text: "Built on the latest FDK 3.0 Node runtime using encrypted server-side request templates so API keys are never exposed in the browser."
+                      }
+                    ],
+                      outcome: "Completed and validated the full Freshworks Platform 3.0 application, including the admin rule builder and background interceptor—ready for production rollout.",
+                        next: "Deploy to production Freshdesk (uplandsoftware.freshdesk.com) and roll out initial Tier-1 and Tier-2 agent governance rules.",
+                          note: "Built this so support leaders can prevent accidental ticket closures and lock down sensitive fields by role without paying for costly tier upgrades.",
+                            media: [
+                              {
+                                image: "assets/freshplug-admin-rules.jpg",
+                                alt: "Freshdesk Role-Based UI Visibility Rules Admin Portal",
+                                caption: "Freshplug Admin Portal: Rule builder for defining Hide, Disable, and Block policies across ticket fields and buttons by agent role."
+                              }
+                            ],
+                              link: {
+        url: "https://github.com/upld-internal/Freshdesk-UI-Controller",
+          label: "GitHub: upld-internal/Freshdesk-UI-Controller →"
+      }
+    },
+    {
+      name: "Snowflake Support Operations Dashboard & AI Analytics Engine",
+        type: "Proof of Concept",
+          status: "active",
+            date: "Q4 2026",
+              metrics: [
+                { value: "16,400+ Tickets", label: "Live Snowflake warehouse feed" },
+                { value: "Ask Analyst", label: "Plain-English AI deck generator" },
+                { value: "100% Cited", label: "Findings linked to ticket IDs" }
+              ],
+                tags: [
+                  "POC (In Testing)",
+                  "Snowflake Warehouse",
+                  "Freshdesk Telemetry",
+                  "Generative AI Analytics",
+                  "Local LLM (Qwen 3.5)",
+                  "Semantic Clustering",
+                  "Zero Cloud Cost"
+                ],
+                  idea: "Turn 16,400+ raw Freshdesk tickets in Snowflake into live operational dashboards and instant executive presentations. Leaders can ask questions in plain English to cluster ticket themes, analyze customer sentiment, and generate slide decks backed by exact ticket citations.",
+                    whatWeDo: [
+                      {
+                        title: "Live Snowflake Support Telemetry",
+                        text: "Connects directly to Snowflake (16,400+ Freshdesk tickets) to track SLA health, active queues, unassigned backlogs, and resolution speeds in real time."
+                      },
+                      {
+                        title: "'Ask Analyst' AI Deck Generator",
+                        text: "Lets support leaders ask plain-English questions (e.g., <em>'How do customers feel this past month?'</em> or <em>'What drives escalations?'</em>) to generate executive summaries:",
+                        subitems: [
+                          {
+                            title: "Semantic Ticket Clustering",
+                            text: "Groups matching tickets into thematic clusters using embedding similarity and extracts representative sample sets."
+                          },
+                          {
+                            title: "Verified Ticket Citations",
+                            text: "Summarizes customer pain points and resolution patterns while citing exact Freshdesk ticket numbers for audit verification."
+                          },
+                          {
+                            title: "One-Click Deck, PDF & CSV Export",
+                            text: "Exports AI-generated findings directly into presentation slide decks, PDF reports, and raw CSV tables."
+                          }
+                        ]
+                      },
+                      {
+                        title: "100% Private Local LLM Execution",
+                        text: "Runs a quantized Qwen 3.5 model on internal hardware so sensitive customer tickets never touch third-party cloud APIs—ensuring complete privacy and $0 token costs."
+                      },
+                      {
+                        title: "Interactive Dimensional Drill-Downs",
+                        text: "Supports click-to-filter slicing across dates, product brands, support teams, priorities, and queues—recalculating median response and resolution times on the fly."
+                      }
+                    ],
+                      outcome: "Working POC actively in testing with support leadership, combining live telemetry over 16,400+ Snowflake ticket records with natural-language slide deck generation.",
+                        next: "Complete operational testing with support managers, optimize multi-year Snowflake SQL queries, and automate weekly executive digests to Slack.",
+                          note: "The 'Ask Analyst' feature bridges the gap between high-level metric charts and real customer stories—leaders can type a plain-English question and immediately get a structured breakdown backed by real ticket IDs.",
+                            media: [
+                              {
+                                image: "assets/snowflake-operations-overview.png",
+                                alt: "Snowflake Customer Support Operations Overview Dashboard",
+                                caption: "Support Operations Overview: Live telemetry across 16,400+ Freshdesk tickets in Snowflake showing volume trends, backlog health, and resolution speeds."
+                              },
+                              {
+                                image: "assets/snowflake-ai-analyst.png",
+                                alt: "Ask Analyst Generative AI Findings and Ticket Citations",
+                                caption: "Ask Analyst Feature: AI-synthesized response to 'How do customers feel this past month?', clustering 154 tickets into thematic findings with direct ticket citations."
+                              }
+                            ],
+                              link: {
+        url: "https://github.com/upld-internal/SSO-Support-Dashboard",
+          label: "GitHub: upld-internal/SSO-Support-Dashboard →"
+      }
+    }
       ],
 
-      next: [
-        {
-          when: "Next Milestone",
-          title: "Full Production Rollout of SSO Community Automation",
-          text: "Transition SSO Community Automation to 100% full production across all ticket queues following operational sign-off, and resolve upstream Salesforce company sync lag.",
-          status: "active"
-        },
-        {
-          when: "Upcoming",
-          title: "Deploy Freshplug UI Governance & Port Voicemail Triage",
-          text: "Roll out the Freshplug UI Governance Suite to production Freshdesk, and migrate the local AI Voicemail Triage engine from Zendesk to Freshdesk.",
-          status: "planned"
-        },
-        {
-          when: "Roadmap",
-          title: "Scale Snowflake AI Support Intelligence",
-          text: "Optimize Snowflake SQL performance across multi-year datasets, sharpen topic clustering in 'Ask Analyst', and automate scheduled weekly executive digests.",
-          status: "planned"
-        }
-      ],
+    next: [
+      {
+        when: "Next Milestone",
+        title: "Full Production Rollout of SSO Community Automation",
+        text: "Transition SSO Community Automation to 100% full production across all ticket queues following operational sign-off, and resolve upstream Salesforce company sync lag.",
+        status: "active"
+      },
+      {
+        when: "Upcoming",
+        title: "Deploy Freshplug UI Governance & Port Voicemail Triage",
+        text: "Roll out the Freshplug UI Governance Suite to production Freshdesk, and migrate the local AI Voicemail Triage engine from Zendesk to Freshdesk.",
+        status: "planned"
+      },
+      {
+        when: "Roadmap",
+        title: "Scale Snowflake AI Support Intelligence",
+        text: "Optimize Snowflake SQL performance across multi-year datasets, sharpen topic clustering in 'Ask Analyst', and automate scheduled weekly executive digests.",
+        status: "planned"
+      }
+    ],
       contact: "ahmostafa@uplandsoftware.com"
     };
     /* ============================================================ */
