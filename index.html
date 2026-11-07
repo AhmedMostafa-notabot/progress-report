@@ -1165,27 +1165,22 @@
       position: relative;
       overflow: hidden;
       background: #0f172a;
-      background: #161616;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .media img {
       display: block;
       width: 100%;
       height: auto;
-      height: 100%;
       max-height: 480px;
       object-fit: contain;
       background: #090d16;
-      background: #161616;
       cursor: zoom-in;
       transition: transform 0.25s ease;
     }
 
     .media-frame.cover-frame {
+      flex: 1;
+      display: flex;
       align-items: stretch;
       background: #ffffff;
     }
@@ -2350,6 +2345,13 @@
           outcome: "Live in production on enterprise server RTAUS1WEBPR03, autonomously handling the majority of SSO tickets across 4 core support request types in under 30 seconds with complete ticket audit trails.",
           next: "Fix upstream Salesforce-to-Freshdesk company sync delays and complete final webhook security hardening.",
           note: "Running the 4-bit Qwen model directly inside Node via ONNX on CPU was a huge win—sub-50ms speed, $0 cloud cost, and zero customer PII leaving our server.",
+          media: [
+            {
+              image: "assets/sso-community-workflow.png",
+              alt: "Community Access Process Overview — Script Rules, AI Interpretation, and Human Approval Flow",
+              caption: "Community Access Process Overview: 5-stage decision architecture (Intake, Company Match, Eligibility, Policy Approval, and Fulfilment) showing how deterministic scripts, local AI reply interpretation, and human exception approvals work together."
+            }
+          ],
           link: {
             url: "https://github.com/upld-internal/SSOCommunityAutomation",
             label: "GitHub: SSOCommunityAutomation (Live on RTAUS1WEBPR03) →"
@@ -2664,7 +2666,6 @@
         const frameStyle = item.aspectRatio ? ` style="aspect-ratio:${item.aspectRatio};"` : "";
         if (item.image) {
           content = `
-            <div class="media-frame">
             <div class="${frameClass}"${frameStyle}>
               <img src="${item.image}" alt="${cleanAlt}" data-caption="${cleanCap}" loading="lazy"
                    onclick="openLightbox(this)"
@@ -2675,7 +2676,6 @@
           const posterAttr = item.poster ? ` poster="${item.poster}"` : "";
           content = `
             <div class="media-frame">
-              <video src="${item.video}" controls preload="metadata"
               <video src="${item.video}"${posterAttr} controls preload="metadata"
                      onerror="handleMediaError(this, 'video', '${item.video}')">
                 Your browser does not support the video tag.
